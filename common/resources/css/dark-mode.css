@@ -1,0 +1,128 @@
+/* SensorsReport Dark Mode Styles */
+:root {
+  /* Dark theme base colors */
+  --sensorsreport-dark-bg-color: #121212;
+  --sensorsreport-dark-surface-color: #1e1e1e;
+  --sensorsreport-dark-elevated-surface: #242424;
+  --sensorsreport-dark-text-color: #e9ecef;
+  --sensorsreport-dark-secondary-text: #adb5bd;
+  --sensorsreport-dark-border-color: #2c2c2c;
+  --sensorsreport-dark-primary: #00b4d8;
+  --sensorsreport-dark-secondary: #48cae4;
+  --sensorsreport-dark-accent: #ffd60a;
+  --sensorsreport-dark-hover-bg: rgba(0, 180, 216, 0.15);
+  --sensorsreport-dark-card-bg: #1e1e1e;
+  --sensorsreport-dark-input-bg: #242424;
+  --sensorsreport-dark-error: #e74c3c;
+  --sensorsreport-dark-success: #2ecc71;
+  --sensorsreport-dark-warning: #f1c40f;
+  --sensorsreport-dark-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.pf-v5-theme-dark {
+  /* PatternFly overrides */
+  --pf-v5-global--BackgroundColor--100: var(--sensorsreport-dark-bg-color);
+  --pf-v5-global--BackgroundColor--200: var(--sensorsreport-dark-surface-color);
+  --pf-v5-global--Color--100: var(--sensorsreport-dark-text-color);
+  --pf-v5-global--Color--200: var(--sensorsreport-dark-secondary-text);
+  
+  /* Input and form styles */
+  --pf-v5-c-form-control--BackgroundColor: var(--sensorsreport-dark-input-bg);
+  --pf-v5-c-form-control--BorderColor: var(--sensorsreport-dark-border-color);
+  --pf-v5-c-form-control--Color: var(--sensorsreport-dark-text-color);
+  
+  /* Button styles */
+  --pf-v5-c-button--m-primary--BackgroundColor: var(--sensorsreport-dark-primary);
+  --pf-v5-c-button--m-primary--Color: var(--sensorsreport-dark-text-color);
+  --pf-v5-c-button--m-secondary--BackgroundColor: var(--sensorsreport-dark-input-bg);
+  --pf-v5-c-button--m-secondary--Color: var(--sensorsreport-dark-text-color);
+  
+  /* Card and panel styles */
+  --pf-v5-c-card--BackgroundColor: var(--sensorsreport-dark-card-bg);
+  --pf-v5-c-panel--BackgroundColor: var(--sensorsreport-dark-card-bg);
+  
+  /* Alert styles */
+  --pf-v5-c-alert--m-success--BackgroundColor: var(--sensorsreport-dark-success);
+  --pf-v5-c-alert--m-warning--BackgroundColor: var(--sensorsreport-dark-warning);
+  --pf-v5-c-alert--m-danger--BackgroundColor: var(--sensorsreport-dark-error);
+}
+
+/* Additional dark mode adjustments */
+.pf-v5-theme-dark {
+  /* Form control hover and focus states */
+  .pf-v5-c-form-control:hover {
+    background-color: var(--sensorsreport-dark-elevated-surface);
+    border-color: var(--sensorsreport-dark-primary);
+  }
+  
+  .pf-v5-c-form-control:focus {
+    background-color: var(--sensorsreport-dark-elevated-surface);
+    border-color: var(--sensorsreport-dark-primary);
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.25);
+  }
+  
+  /* Link colors */
+  a {
+    color: var(--sensorsreport-dark-secondary);
+  }
+  
+  a:hover {
+    color: var(--sensorsreport-dark-primary);
+  }
+  
+  /* Table styles */
+  .table {
+    background-color: var(--sensorsreport-dark-surface-color);
+    color: var(--sensorsreport-dark-text-color);
+  }
+  
+  .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: var(--sensorsreport-dark-elevated-surface);
+  }
+  
+  /* Card and panel shadows */
+  .card, .panel {
+    box-shadow: 0 2px 4px var(--sensorsreport-dark-shadow);
+  }
+  
+  /* Dropdown menu styles */
+  .dropdown-menu {
+    background-color: var(--sensorsreport-dark-surface-color);
+    border-color: var(--sensorsreport-dark-border-color);
+    box-shadow: 0 4px 8px var(--sensorsreport-dark-shadow);
+  }
+  
+  .dropdown-menu > li > a {
+    color: var(--sensorsreport-dark-text-color);
+  }
+  
+  .dropdown-menu > li > a:hover {
+    background-color: var(--sensorsreport-dark-hover-bg);
+    color: var(--sensorsreport-dark-primary);
+  }
+  
+  /* Button hover effects */
+  .btn-primary:hover {
+    background-color: var(--sensorsreport-dark-secondary);
+    border-color: var(--sensorsreport-dark-secondary);
+  }
+  
+  /* Alert text colors */
+  .alert {
+    color: var(--sensorsreport-dark-text-color);
+  }
+
+  /* Background transitions */
+  #keycloak-bg {
+    transition: background-image 1s ease-in-out;
+  }
+
+  #keycloak-bg::before {
+    background: linear-gradient(120deg, rgba(10, 147, 150, 0.3), rgba(0, 0, 0, 0.8));
+    transition: background 1s ease-in-out;
+  }
+
+  #keycloak-bg::after {
+    transition: opacity 1s ease-in-out;
+  }
+}

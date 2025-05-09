@@ -1,0 +1,484 @@
+/* SensorsReport Account Theme Styles */
+
+:root {
+  --sr-primary-color: #0870a3;
+  --sr-secondary-color: #1e90ff;
+  --sr-accent-color: #ff8400;
+  --sr-text-color: #112233;
+  --sr-background-color: #f8faff;
+  --sr-card-background: #ffffff;
+  --sr-border-color: #d0e0ef;
+  --sr-footer-text-color: #5a6b7b;
+  --sr-footer-link-color: #0870a3;
+  --sr-input-focus-color: rgba(30, 144, 255, 0.25);
+  --sr-error-color: #e63946;
+  --sr-success-color: #2a9d8f;
+  --sr-shadow-color: rgba(8, 112, 163, 0.15);
+  --sr-hover-bg: rgba(30, 144, 255, 0.08);
+}
+
+.pf-v5-theme-dark {
+  --sr-primary-color: #00b4d8;
+  --sr-secondary-color: #48cae4;
+  --sr-accent-color: #ffd60a;
+  --sr-text-color: #ffffff;
+  --sr-background-color: var(--sensorsreport-dark-bg-color);
+  --sr-card-background: var(--sensorsreport-dark-card-bg);
+  --sr-border-color: var(--sensorsreport-dark-border-color);
+  --sr-footer-text-color: #adb5bd;
+  --sr-footer-link-color: #48cae4;
+  --sr-input-focus-color: rgba(0, 180, 216, 0.4);
+  --sr-error-color: #ff6b6b;
+  --sr-success-color: #40c057;
+  --sr-shadow-color: rgba(0, 180, 216, 0.2);
+  --sr-hover-bg: rgba(0, 180, 216, 0.15);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--sr-background-color);
+  color: var(--sr-text-color);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Account Container */
+#sr-account-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  transition: opacity 0.2s ease;
+}
+
+/* Account Header */
+.sr-account-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sr-logo-container {
+  margin-bottom: 1.5rem;
+}
+
+.sr-logo {
+  max-width: 220px;
+  height: auto;
+}
+
+.sr-account-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sr-primary-color);
+  margin: 0;
+}
+
+/* Account Content */
+.sr-account-content {
+  flex: 1;
+}
+
+/* Account Card */
+.sr-account-card {
+  background-color: var(--sr-card-background);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--sr-shadow-color);
+  border: 1px solid var(--sr-border-color);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+}
+
+.pf-v5-theme-dark .sr-account-card {
+  background-color: rgba(30, 30, 30, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.sr-account-welcome {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sr-account-welcome h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--sr-text-color);
+  margin-bottom: 0.75rem;
+}
+
+.sr-account-welcome p {
+  font-size: 1rem;
+  color: var(--sr-footer-text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Account Sections */
+.sr-account-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .sr-account-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sr-account-section {
+  background-color: var(--sr-card-background);
+  border: 1px solid var(--sr-border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.sr-account-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px var(--sr-shadow-color);
+  border-color: var(--sr-secondary-color);
+}
+
+.pf-v5-theme-dark .sr-account-section {
+  background-color: rgba(46, 46, 46, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pf-v5-theme-dark .sr-account-section:hover {
+  box-shadow: 0 8px 16px rgba(0, 180, 216, 0.3);
+  border-color: var(--sr-secondary-color);
+}
+
+.sr-account-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--sr-primary-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.sr-account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Button Styles */
+.sr-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sr-btn-primary {
+  background: linear-gradient(to bottom right, var(--sr-primary-color), var(--sr-secondary-color));
+  color: white;
+  border: none;
+}
+
+.sr-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--sr-shadow-color);
+  filter: brightness(110%);
+}
+
+.pf-v5-theme-dark .sr-btn-primary {
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+.pf-v5-theme-dark .sr-btn-primary:hover {
+  box-shadow: 0 8px 16px rgba(0, 180, 216, 0.4);
+}
+
+.sr-btn-secondary {
+  background-color: transparent;
+  border-color: var(--sr-secondary-color);
+  color: var(--sr-secondary-color);
+}
+
+.sr-btn-secondary:hover {
+  background-color: var(--sr-hover-bg);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px var(--sr-shadow-color);
+}
+
+.sr-btn-accent {
+  background-color: var(--sr-accent-color);
+  color: white;
+}
+
+.sr-btn-accent:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.sr-account-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--sr-border-color);
+}
+
+.sr-footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sr-footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sr-footer-link {
+  color: var(--sr-footer-link-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.sr-footer-link:hover {
+  color: var(--sr-accent-color);
+  text-decoration: underline;
+}
+
+.sr-footer-copyright {
+  color: var(--sr-footer-text-color);
+  font-size: 0.75rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  #sr-account-container {
+    padding: 1rem;
+  }
+  
+  .sr-account-card {
+    padding: 1.5rem;
+  }
+  
+  .sr-account-section {
+    padding: 1.25rem;
+  }
+  
+  .sr-account-sections {
+    gap: 1rem;
+  }
+  
+  .sr-footer-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Animation and Interaction Styles for Account Theme */
+
+/* Input Field Focus Effects */
+.input-focused {
+  position: relative;
+}
+
+.input-focused input,
+.input-focused select,
+.input-focused textarea {
+  border-color: var(--sr-secondary-color) !important;
+  box-shadow: 0 0 0 3px var(--sr-input-focus-color) !important;
+  transition: all 0.2s ease;
+}
+
+.input-has-value label {
+  color: var(--sr-primary-color);
+  font-weight: 500;
+}
+
+/* Password Toggle Button */
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--sr-footer-text-color);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.password-toggle-btn:hover {
+  color: var(--sr-secondary-color);
+}
+
+/* Ripple Effect for Interactive Elements */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(10, 147, 150, 0.2);
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  animation: ripple 0.8s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Theme Toggle Button */
+.sr-theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--sr-card-background);
+  color: var(--sr-primary-color);
+  border: 1px solid var(--sr-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.sr-theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--sr-shadow-color);
+  border-color: var(--sr-secondary-color);
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-theme-dark .sr-theme-toggle {
+  background-color: rgba(0, 180, 216, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-theme-dark .sr-theme-toggle:hover {
+  background-color: rgba(0, 180, 216, 0.2);
+  border-color: var(--sr-secondary-color);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+/* Loading Indicator */
+.sr-loading {
+  position: relative;
+}
+
+.sr-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.pf-v5-theme-dark .sr-loading::after {
+  background-color: rgba(30, 30, 30, 0.7);
+}
+
+/* Transition effects for theme switching */
+input, 
+select, 
+textarea,
+.sr-theme-toggle {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Notification styles */
+.sr-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: white;
+  font-size: 0.9rem;
+  max-width: 300px;
+  z-index: 1000;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sr-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sr-notification-success {
+  background-color: var(--sr-success-color);
+}
+
+.sr-notification-error {
+  background-color: var(--sr-error-color);
+}
+
+.sr-notification-info {
+  background-color: var(--sr-secondary-color);
+}
+
+/* Focus accessibility improvements */
+:focus {
+  outline: 2px solid var(--sr-secondary-color);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sr-secondary-color);
+  outline-offset: 2px;
+}
+
+/* Transitions for theme switching */
+.sr-account-container,
+.sr-account-card,
+.sr-account-section,
+.sr-btn,
+input,
+select,
+textarea,
+.sr-theme-toggle {
+  transition: all 0.3s ease;
+}

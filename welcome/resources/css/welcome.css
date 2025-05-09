@@ -1,0 +1,99 @@
+.pf-v5-c-background-image {
+  /* Change background size so that the image covers the entire background. */
+  --pf-v5-c-background-image--BackgroundSize: cover;
+  transition: all 0.3s ease;
+}
+
+.pf-v5-c-login__container {
+  /* Change the grid layout so that the header is always above the main area. */
+  grid-template-areas: "header" "main";
+  --pf-v5-c-login__container--xl--GridTemplateColumns: minmax(auto, 34rem);
+}
+
+.kc-brand {
+  height: 63px;
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  transition: filter 0.3s ease;
+}
+
+/* Dark mode support with enhanced contrast */
+.pf-v5-theme-dark {
+  --pf-v5-global--BackgroundColor--100: #121212;
+  --pf-v5-global--Color--100: #ffffff;
+  --pf-v5-global--Color--200: #e0e0e0;
+  --pf-v5-c-card--BackgroundColor: rgba(30, 30, 30, 0.95);
+  --pf-v5-c-card--BoxShadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  --pf-v5-c-card--BorderColor: rgba(255, 255, 255, 0.1);
+}
+
+.pf-v5-theme-dark .kc-brand {
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* SensorsReport custom styling */
+.sensorsreport-welcome-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: var(--pf-v5-global--Color--100);
+  transition: color 0.3s ease;
+}
+
+.sensorsreport-welcome-text {
+  margin-bottom: 1rem;
+  color: var(--pf-v5-global--Color--200);
+  transition: color 0.3s ease;
+}
+
+.pf-v5-c-login__main-header {
+  border-top: 4px solid var(--sr-primary-color);
+  background-color: var(--sr-card-background);
+  transition: all 0.3s ease;
+}
+
+/* Card styling */
+.pf-v5-c-card {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Theme toggle button */
+.sr-theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--sr-card-background);
+  color: var(--sr-primary-color);
+  border: 1px solid var(--sr-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.sr-theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--sr-shadow-color);
+  border-color: var(--sr-secondary-color);
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-theme-dark .sr-theme-toggle {
+  background-color: rgba(0, 180, 216, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-theme-dark .sr-theme-toggle:hover {
+  background-color: rgba(0, 180, 216, 0.2);
+  border-color: var(--sr-secondary-color);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}

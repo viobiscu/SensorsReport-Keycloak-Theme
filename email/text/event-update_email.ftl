@@ -1,0 +1,1 @@
+${msg("event" + eventType + "Body", eventDate, eventIpAddress)}

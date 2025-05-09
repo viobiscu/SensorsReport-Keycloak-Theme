@@ -1,0 +1,1126 @@
+/* SensorsReport Custom Theme Styles */
+
+:root {
+  /* Enhanced light theme with more vibrant colors and better contrast */
+  --sr-primary-color: #0870a3;
+  --sr-secondary-color: #1e90ff;
+  --sr-accent-color: #ff8400;
+  --sr-text-color: #112233;
+  --sr-background-color: #f8faff;
+  --sr-card-background: #ffffff;
+  --sr-border-color: #d0e0ef;
+  --sr-footer-text-color: #5a6b7b;
+  --sr-footer-link-color: #0870a3;
+  --sr-shadow-color: rgba(8, 112, 163, 0.15);
+  --sr-hover-bg: rgba(30, 144, 255, 0.08);
+  --sr-focus-ring: rgba(30, 144, 255, 0.25);
+}
+
+.pf-v5-theme-dark {
+  --sr-primary-color: #00b4d8;
+  --sr-secondary-color: #48cae4;
+  --sr-accent-color: #ffd60a;
+  --sr-text-color: #ffffff;
+  --sr-background-color: var(--sensorsreport-dark-bg-color);
+  --sr-card-background: var(--sensorsreport-dark-card-bg);
+  --sr-border-color: var(--sensorsreport-dark-border-color);
+  --sr-footer-text-color: #adb5bd;
+  --sr-footer-link-color: #48cae4;
+  --sr-shadow-color: rgba(0, 180, 216, 0.2);
+  --sr-hover-bg: rgba(0, 180, 216, 0.15);
+  --sr-focus-ring: rgba(0, 180, 216, 0.4);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: var(--sr-text-color);
+}
+
+/* Background styling */
+#keycloak-bg {
+  background-color: var(--sr-background-color);
+  /* Background image will be set by JS instead of CSS */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+#keycloak-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(120deg, rgba(8, 112, 163, 0.7), rgba(0, 0, 0, 0.6));
+  z-index: 2;
+  transition: background 1s ease-in-out;
+}
+
+.pf-v5-theme-dark #keycloak-bg::before {
+  background: linear-gradient(120deg, rgba(10, 147, 150, 0.3), rgba(0, 0, 0, 0.8));
+}
+
+/* Main login wrapper */
+.pf-v5-c-login {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Add space for the header */
+}
+
+.pf-v5-c-login__container {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+.pf-v5-c-login__main {
+  background-color: var(--sr-card-background);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--sr-shadow-color);
+  border: 1px solid var(--sr-border-color);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.pf-v5-theme-dark .pf-v5-c-login__main {
+  background-color: rgba(30, 30, 30, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.pf-v5-c-login__main-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--sr-border-color);
+  background-color: rgba(8, 112, 163, 0.03); /* Very subtle blue background for header */
+}
+
+.pf-v5-theme-dark .pf-v5-c-login__main-header {
+  background-color: rgba(10, 147, 150, 0.05); /* Subtle teal background for dark theme */
+}
+
+.pf-v5-c-login__main-body {
+  padding: 2rem;
+}
+
+/* Brand/Logo styling */
+.pf-v5-c-brand {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+
+/* Header controls layout */
+.sr-login-header {
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  height: 64px;
+}
+
+/* Logo styling */
+.sr-login-header .pf-v5-c-brand {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.sensors-report-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* Header controls container */
+.sr-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Language selector styling */
+.sr-language-selector {
+  position: relative;
+  z-index: 10; /* Ensure dropdown appears above other elements */
+}
+
+.language-selector-container {
+  position: relative;
+  height: 40px;
+}
+
+#login-select-toggle {
+  height: 40px;
+  line-height: 38px; /* Vertically center text, accounting for 1px top/bottom border */
+  padding: 0 2.5rem 0 40px; /* Consistent padding: T/B 0, R 2.5rem, L 40px */
+  border-radius: 6px;
+  border: 1px solid var(--sr-border-color);
+  background-color: var(--sr-card-background);
+  color: var(--sr-text-color) !important; /* Ensure text color is applied */
+  font-size: 0.875rem;
+  min-width: 160px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: 10px center !important; /* Ensure flag position */
+  background-repeat: no-repeat !important; /* Ensure flag repeat */
+  background-size: 20px auto !important; /* Ensure flag size */
+  cursor: pointer;
+  position: relative; /* For z-index and positioning context */
+  z-index: 5; /* From previous rule */
+}
+
+/* Theme toggle button */
+.sr-theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--sr-border-color);
+  background-color: var(--sr-card-background);
+  color: var(--sr-primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Improved contrast for dropdown options */
+#login-select-toggle option {
+  background-color: var(--sr-card-background) !important;
+  color: var(--sr-text-color) !important;
+  padding: 8px 10px 8px 40px !important;
+  min-height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.pf-v5-theme-dark #login-select-toggle option {
+  background-color: #2c2c2c !important;
+  color: #ffffff !important;
+}
+
+/* Ensure flag background images are visible */
+.flag-en, .flag-ro, .flag-de, .flag-es, .flag-fr {
+  background-position: 10px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px auto !important;
+  position: relative;
+  background-color: transparent !important;
+}
+
+.flag-option {
+  background-position: 10px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px auto !important;
+  position: relative;
+  z-index: 6;
+  padding: 8px 10px 8px 40px !important;
+  min-height: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Flag specific classes with improved visibility */
+.flag-en, .flag-option[data-flag="en"] {
+  background-image: url('../img/flags/en.png') !important;
+}
+
+.flag-ro, .flag-option[data-flag="ro"] {
+  background-image: url('../img/flags/ro.png') !important;
+}
+
+.flag-de, .flag-option[data-flag="de"] {
+  background-image: url('../img/flags/de.png') !important;
+}
+
+.flag-fr, .flag-option[data-flag="fr"] {
+  background-image: url('../img/flags/fr.png') !important;
+}
+
+.flag-es, .flag-option[data-flag="es"] {
+  background-image: url('../img/flags/es.png') !important;
+}
+
+/* Add additional styles for proper dropdown display */
+.language-selector-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Fix for Webkit browsers */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select {
+    text-indent: 5px;
+  }
+  
+  select option {
+    text-indent: 20px;
+  }
+}
+
+/* Language selector and flag styling - improved */
+.sr-language-selector .language-selector-container {
+  position: relative;
+  display: inline-block;
+}
+
+.sr-language-selector .language-selector-container::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--sr-text-color);
+  pointer-events: none;
+}
+
+.sr-login-header .pf-v5-c-brand img {
+  max-width: 220px;
+  height: auto;
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sr-primary-color);
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.login-title span {
+  font-weight: 900;
+}
+
+.sensors-report-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Page title styling */
+.pf-v5-c-title.pf-m-3xl {
+  color: var(--sr-text-color);
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Form elements styling */
+.pf-v5-c-form-control {
+  border-radius: 6px;
+  border-color: var(--sr-border-color);
+  transition: all 0.2s ease;
+  padding: 0.75rem 1rem;
+  font-size: 0.975rem;
+  background-color: var(--sr-card-background);
+  color: var(--sr-text-color);
+}
+
+.pf-v5-c-form-control:hover {
+  border-color: var(--sr-secondary-color);
+  box-shadow: 0 2px 4px var(--sr-shadow-color);
+}
+
+.pf-v5-c-form-control:focus {
+  border-color: var(--sr-primary-color);
+  box-shadow: 0 0 0 3px var(--sr-focus-ring);
+  outline: none;
+}
+
+.pf-v5-c-form__label-text {
+  font-weight: 600; /* Bolder labels for light theme */
+  color: var(--sr-text-color);
+  font-size: 0.875rem;
+}
+
+/* Custom Form Styling */
+.sensors-report-form-wrapper {
+  max-width: 100%;
+  background: linear-gradient(to bottom, rgba(8, 112, 163, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.pf-v5-theme-dark .sensors-report-form-wrapper {
+  background: none; /* Remove gradient in dark mode */
+}
+
+.sensors-report-form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.sensors-report-form-header img.sensors-report-icon {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 60px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px var(--sr-shadow-color));
+}
+
+.sensors-report-form-header h2 {
+  font-size: 1.75rem; /* Larger heading */
+  font-weight: 700; /* Bolder heading */
+  color: var(--sr-primary-color); /* Primary color for heading */
+  margin-bottom: 0.5rem;
+}
+
+.pf-v5-theme-dark .sensors-report-form-header h2 {
+  color: var(--sr-secondary-color); /* Different color for dark theme */
+}
+
+.sensors-report-form-header p {
+  color: var(--sr-footer-text-color);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Register container styling */
+.sensors-report-register-container {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.sensors-report-register-prompt {
+  font-size: 0.95rem;
+  color: var(--sr-text-color);
+}
+
+.sensors-report-register-link {
+  margin-left: 0.5rem;
+  color: var(--sr-primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sensors-report-register-link:hover {
+  color: var(--sr-secondary-color);
+  text-decoration: underline;
+}
+
+/* Password toggle button styling */
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--sr-footer-text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  z-index: 2;
+}
+
+.password-toggle-btn:hover {
+  color: var(--sr-primary-color);
+}
+
+/* Position the toggle button correctly within the input container */
+.pf-v5-c-input-group, 
+div[dir="ltr"] {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Ensure input fields with toggle buttons have enough padding */
+#password,
+#password-confirm,
+#password-new,
+input[type="password"] {
+  padding-right: 40px !important;
+}
+
+/* Input focus effects */
+.input-focused {
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--sr-focus-ring); }
+  70% { box-shadow: 0 0 0 5px rgba(10, 147, 150, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(10, 147, 150, 0); }
+}
+
+.input-has-value label {
+  color: var(--sr-primary-color);
+}
+
+/* Checkbox styling */
+.checkbox {
+  margin-top: 0.25rem;
+}
+
+.checkbox label {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--sr-text-color);
+}
+
+.checkbox input[type="checkbox"] {
+  margin-right: 0.5rem;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+/* Form options styling */
+.pf-v5-c-form__group.pf-m-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Forgot Password Link Styling */
+.sr-forgot-password-wrapper {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.sr-forgot-password-link {
+  color: var(--sr-secondary-color);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding: 0.3rem 0;
+}
+
+.sr-forgot-password-link:hover {
+  color: var(--sr-primary-color);
+  text-decoration: underline;
+}
+
+.sr-forgot-password-link:before {
+  content: '\f084';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 0.5rem;
+  font-weight: 900;
+}
+
+/* Forgot Password Button Styling */
+.sr-forgot-password-button-container {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.sr-forgot-password-button {
+  display: inline-block;
+  color: var(--sr-secondary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--sr-border-color);
+  border-radius: 6px;
+  background-color: transparent;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.sr-forgot-password-button:hover {
+  background-color: var(--sr-hover-bg);
+  border-color: var(--sr-secondary-color);
+  color: var(--sr-primary-color);
+}
+
+.sr-forgot-password-button:before {
+  content: '\f084';
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 0.5rem;
+  font-weight: 900;
+}
+
+/* Button styling */
+.pf-v5-c-button {
+  border-radius: 6px;
+  font-weight: 600; /* Bolder text for buttons */
+  padding: 0.625rem 1.25rem;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+}
+
+.pf-v5-c-button.pf-m-primary {
+  background: linear-gradient(to bottom right, var(--sr-primary-color), var(--sr-secondary-color));
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.pf-v5-c-button.pf-m-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px var(--sr-shadow-color);
+  filter: brightness(110%);
+}
+
+.pf-v5-theme-dark .pf-v5-c-button.pf-m-primary {
+  background: linear-gradient(to bottom right, var(--sr-primary-color), var(--sr-secondary-color));
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+.pf-v5-theme-dark .pf-v5-c-button.pf-m-primary:hover {
+  box-shadow: 0 8px 16px rgba(0, 180, 216, 0.4);
+}
+
+.pf-v5-c-button.pf-m-secondary {
+  background-color: transparent;
+  border-color: var(--sr-secondary-color);
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-c-button.pf-m-secondary:hover {
+  background-color: var(--sr-hover-bg);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px var(--sr-shadow-color);
+}
+
+.pf-v5-c-button.pf-m-link {
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-c-button.pf-m-block {
+  width: 100%;
+  justify-content: center;
+}
+
+.pf-v5-c-button.pf-m-large {
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+}
+
+#kc-form-buttons {
+  margin-top: 2rem;
+}
+
+#kc-form-options {
+  margin-bottom: 1rem;
+}
+
+/* "Forgot password" link styling */
+#kc-form-options + div a {
+  color: var(--sr-secondary-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+#kc-form-options + div a:hover {
+  color: var(--sr-primary-color);
+  text-decoration: underline;
+}
+
+/* Custom Footer styling */
+.sensors-report-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.sensors-report-footer-content {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.sensors-report-footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sensors-report-footer-link {
+  color: var(--sr-footer-link-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.sensors-report-footer-link:hover {
+  color: var(--sr-accent-color);
+  text-decoration: underline;
+}
+
+.sensors-report-footer-copyright {
+  color: var(--sr-footer-text-color);
+  font-size: 0.75rem;
+}
+
+/* Footer styling */
+.pf-v5-c-login__main-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--sr-border-color);
+}
+
+.pf-v5-c-login__main-footer-band {
+  margin-top: 1rem;
+}
+
+/* Alert styling */
+.pf-v5-c-alert {
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+/* Language selector styling */
+#login-select-toggle {
+  border-radius: 6px;
+  background-color: var(--sr-card-background);
+  color: var(--sr-text-color);
+  border-color: var(--sr-border-color);
+  padding-left: 40px !important; /* Make room for flag icon */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-position: 10px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px auto !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper positioning of flag backgrounds */
+#login-select-toggle.flag-en,
+#login-select-toggle.flag-ro,
+#login-select-toggle.flag-de,
+#login-select-toggle.flag-fr,
+#login-select-toggle.flag-es {
+  background-position: 10px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px auto !important;
+}
+
+/* Flag specific classes - Use !important to override any conflicting styles */
+.flag-en {
+  background-image: url('../img/flags/en.png') !important;
+}
+
+.flag-ro {
+  background-image: url('../img/flags/ro.png') !important;
+}
+
+.flag-de {
+  background-image: url('../img/flags/de.png') !important;
+}
+
+.flag-fr {
+  background-image: url('../img/flags/fr.png') !important;
+}
+
+.flag-es {
+  background-image: url('../img/flags/es.png') !important;
+}
+
+/* Flag options in dropdown - clear positioning */
+.flag-option {
+  display: flex !important;
+  align-items: center !important; 
+  padding-left: 30px !important;
+  height: 20px !important;
+  line-height: 20px !important;
+  background-position: 5px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px auto !important;
+}
+
+/* Flag dropdown options - Ensure backgrounds are properly displayed */
+option.flag-option[data-flag="en"] {
+  background-image: url('../img/flags/en.png') !important;
+}
+
+option.flag-option[data-flag="de"] {
+  background-image: url('../img/flags/de.png') !important;
+}
+
+option.flag-option[data-flag="ro"] {
+  background-image: url('../img/flags/ro.png') !important;
+}
+
+option.flag-option[data-flag="es"] {
+  background-image: url('../img/flags/es.png') !important;
+}
+
+option.flag-option[data-flag="fr"] {
+  background-image: url('../img/flags/fr.png') !important;
+}
+
+/* Dropdown arrow styling */
+.language-selector-container {
+  position: relative;
+}
+
+.language-selector-container::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--sr-text-color);
+  pointer-events: none;
+}
+
+/* Flag options */
+.flag-option {
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 30px; /* Adjust based on flag size */
+  height: 20px; /* Adjust based on flag size */
+  line-height: 20px;
+}
+
+.flag-option[data-flag="en"] {
+  background-image: url('../img/flags/en.png');
+}
+
+.flag-option[data-flag="de"] {
+  background-image: url('../img/flags/de.png');
+}
+
+.flag-option[data-flag="ro"] {
+  background-image: url('../img/flags/ro.png');
+}
+
+.flag-option[data-flag="es"] {
+  background-image: url('../img/flags/es.png');
+}
+
+.flag-option[data-flag="fr"] {
+  background-image: url('../img/flags/fr.png');
+}
+
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* Flag specific classes */
+.flag-en {
+  background-image: url('../img/flags/en.png');
+}
+
+.flag-ro {
+  background-image: url('../img/flags/ro.png');
+}
+
+.flag-de {
+  background-image: url('../img/flags/de.png');
+}
+
+.flag-fr {
+  background-image: url('../img/flags/fr.png');
+}
+
+.flag-es {
+  background-image: url('../img/flags/es.png');
+}
+
+/* Social buttons styling */
+.pf-v5-c-login__main-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* Social login button styling */
+.pf-v5-c-button.pf-m-secondary svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Specific styling for Google and LinkedIn buttons */
+.pf-v5-c-button.pf-m-secondary[aria-label="Google"] svg,
+.pf-v5-c-button.pf-m-secondary[aria-label="Linkedin"] svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+/* Additional spacing and alignment for social buttons */
+.pf-v5-c-button.pf-m-secondary[aria-label="Google"],
+.pf-v5-c-button.pf-m-secondary[aria-label="Linkedin"] {
+  padding: 0.625rem 1.25rem;
+  gap: 8px;
+}
+
+/* Registration form styling */
+.register-fields-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Registration form responsiveness */
+@media (min-width: 768px) {
+  .register-fields-container .pf-v5-c-form__group {
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Password confirm field on registration */
+#password-confirm {
+  padding-right: 40px;
+}
+
+/* "Back to login" link on registration */
+#kc-form-options a {
+  color: var(--sr-secondary-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+#kc-form-options a:hover {
+  color: var(--sr-primary-color);
+  text-decoration: underline;
+}
+
+/* Password validation styling */
+.password-mismatch .pf-v5-c-form-control {
+  border-color: #c9190b;
+  outline: none;
+}
+
+.password-mismatch::after {
+  content: "Passwords don't match";
+  display: block;
+  color: #c9190b;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pf-v5-c-login__container {
+    padding: 1rem;
+  }
+  
+  .pf-v5-c-login__main-header,
+  .pf-v5-c-login__main-body,
+  .pf-v5-c-login__main-footer {
+    padding: 1.25rem;
+  }
+  
+  .sensors-report-footer-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Theme toggle button */
+.sr-theme-toggle {
+  position: relative;
+  background-color: var(--sr-card-background);
+  border: 1px solid var(--sr-border-color);
+  border-radius: 50%;
+  color: var(--sr-primary-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.sr-theme-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--sr-shadow-color);
+  border-color: var(--sr-secondary-color);
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-theme-dark .sr-theme-toggle {
+  background-color: rgba(0, 180, 216, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--sr-secondary-color);
+}
+
+.pf-v5-theme-dark .sr-theme-toggle:hover {
+  background-color: rgba(0, 180, 216, 0.2);
+  border-color: var(--sr-secondary-color);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+/* Legal content styling */
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--sr-text-color);
+}
+
+.legal-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--sr-primary-color);
+  margin-bottom: 1rem;
+}
+
+.legal-content .effective-date {
+  color: var(--sr-footer-text-color);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.legal-content section {
+  margin-bottom: 2rem;
+}
+
+.legal-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--sr-secondary-color);
+  margin-bottom: 1rem;
+}
+
+.legal-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.legal-content ul {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Custom language selector styling - enhanced version */
+.custom-language-select {
+  position: relative;
+  width: 160px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.selected-language {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px 8px 40px;
+  border: 1px solid var(--sr-border-color);
+  border-radius: 6px;
+  background-color: var(--sr-card-background);
+  color: var(--sr-text-color);
+  font-size: 0.875rem;
+  background-position: 10px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px auto !important;
+  position: relative;
+}
+
+.selected-language::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--sr-text-color);
+}
+
+.language-dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--sr-card-background);
+  border: 1px solid var(--sr-border-color);
+  border-radius: 6px;
+  margin-top: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+  overflow: hidden;
+  z-index: 101;
+}
+
+.custom-language-select.open .language-dropdown-options {
+  display: block;
+}
+
+.language-option {
+  display: block;
+  padding: 8px 12px 8px 40px;
+  text-decoration: none;
+  color: var(--sr-text-color);
+  background-position: 10px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 20px auto !important;
+  transition: background-color 0.2s ease;
+}
+
+.language-option:hover {
+  background-color: var(--sr-hover-bg);
+  text-decoration: none;
+}
+
+/* Dark mode styles for custom dropdown */
+.pf-v5-theme-dark .language-dropdown-options {
+  background-color: #2c2c2c;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.pf-v5-theme-dark .language-option:hover {
+  background-color: rgba(0, 180, 216, 0.2);
+}
+
+/* Footer styling */

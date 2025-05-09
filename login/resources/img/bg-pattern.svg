@@ -1,0 +1,13 @@
+/* 
+ * This is a simple SVG background pattern for the SensorsReport theme.
+ * It creates a subtle pattern that's visible in both light and dark modes.
+ */
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="rgba(10, 147, 150, 0.1)" />
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#dots)" />
+</svg>
