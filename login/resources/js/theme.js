@@ -26,33 +26,101 @@ document.addEventListener('DOMContentLoaded', function() {
   // Enhance the language dropdown
   enhanceLanguageSelector();
 
-  // Set static background (removed rotation)
-  setStaticBackground();
+  // Set rotating background with transition effects
+  setupRotatingBackground();
+  
+  // Setup development mode force refresh (remove in production)
+  setupDevModeRefresh();
 });
 
 // Background configuration - images are kept for reference
 const backgrounds = [
-  '../img/pharmaceutical-warehouse.jpg',
-  '../img/pharmaceutical-warehouse-02.jpg',
-  '../img/pharmaceutical-warehouse-03.jpg',
-  '../img/pharmaceutical-warehouse-04.jpg',
-  '../img/food-wine-warehouse.jpg',
-  '../img/food-wine-warehouse-02.jpg',
-  '../img/food-wine-warehouse-03.jpg',
-  '../img/meat-fish-warehouse.jpg',
-  '../img/meat-fish-warehouse-02.jpg',
-  '../img/meat-fish-warehouse-04.jpg'
+  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse-02.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse-03.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse-04.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/food-wine-warehouse.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/food-wine-warehouse-02.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/food-wine-warehouse-03.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/meat-fish-warehouse.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/meat-fish-warehouse-02.jpg', // Absolute path
+  '/resources/rwm2c/login/sensorsreport/img/meat-fish-warehouse-04.jpg' // Absolute path
 ];
 
 /**
- * Sets a static background instead of rotating
+ * Sets up rotating background images with smooth crossfade transition effects
  */
-function setStaticBackground() {
+function setupRotatingBackground() {
   const bgElement = document.getElementById('keycloak-bg');
-  if (bgElement) {
-    // Set a single static background from the first in the list
-    bgElement.style.backgroundImage = `url('${backgrounds[0]}')`;
+  if (!bgElement) return;
+
+  let currentIndex = 0;
+  let nextIndex = 1;
+  
+  // Set initial background image
+  bgElement.style.backgroundImage = `url('${backgrounds[currentIndex]}')`;
+  
+  // Create image preloader to ensure smooth transitions
+  function preloadImages() {
+    backgrounds.forEach(url => {
+      const img = new Image();
+      img.src = url;
+    });
   }
+  
+  // Start preloading images
+  preloadImages();
+  
+  // Function to perform the crossfade transition
+  function rotateBackground() {
+    // Set the next background image to the ::after pseudo-element
+    bgElement.style.setProperty('--next-bg-image', `url('${backgrounds[nextIndex]}')`);
+    
+    // Add the transition class to trigger the crossfade
+    bgElement.classList.add('bg-transition');
+    
+    // After the transition completes, set the main background to the next image
+    // and reset for the next transition
+    setTimeout(() => {
+      bgElement.style.backgroundImage = `url('${backgrounds[nextIndex]}')`;
+      bgElement.classList.remove('bg-transition');
+      
+      // Update indices for next rotation
+      currentIndex = nextIndex;
+      nextIndex = (nextIndex + 1) % backgrounds.length;
+    }, 1500); // Match this duration with the CSS transition duration
+  }
+  
+  // Add CSS transition styles for the crossfade effect
+  const style = document.createElement('style');
+  style.textContent = `
+    #keycloak-bg {
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1.5s ease-in-out;
+    }
+    #keycloak-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: var(--next-bg-image);
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      z-index: 1;
+      transition: opacity 1.5s ease-in-out;
+    }
+    #keycloak-bg.bg-transition::after {
+      opacity: 1;
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Start rotation interval (change background every 10 seconds)
+  setInterval(rotateBackground, 10000);
 }
 
 /**
@@ -433,4 +501,30 @@ function setupThemeToggle() {
       }, 200);
     }
   });
+}
+
+/**
+ * Development helper function to force page refresh during theme development
+ * This should be removed in production environments
+ */
+function setupDevModeRefresh() {
+  // Only enable in development environments
+  const isDevelopment = true; // Set to false for production
+  
+  if (isDevelopment) {
+    // Store a timestamp in localStorage
+    const lastLoadTime = Date.now();
+    localStorage.setItem('kc_theme_last_load', lastLoadTime);
+    
+    // Check every 10 seconds if we need to reload
+    setInterval(() => {
+      const currentVersion = localStorage.getItem('kc_theme_version') || '1.0';
+      const newVersion = '1.1'; // Increment this when you want to force a refresh
+      
+      if (currentVersion !== newVersion) {
+        localStorage.setItem('kc_theme_version', newVersion);
+        window.location.reload();
+      }
+    }, 10000);
+  }
 }

@@ -39,7 +39,6 @@ body {
 /* Background styling */
 #keycloak-bg {
   background-color: var(--sr-background-color);
-  /* Background image will be set by JS instead of CSS */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,8 +49,10 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 0;
+  transition: background-image 1.5s ease-in-out;
 }
 
+/* Add background overlay with positioning for the crossfade effect */
 #keycloak-bg::before {
   content: '';
   position: absolute;
@@ -62,6 +63,21 @@ body {
   background: linear-gradient(120deg, rgba(8, 112, 163, 0.7), rgba(0, 0, 0, 0.6));
   z-index: 2;
   transition: background 1s ease-in-out;
+}
+
+/* Create a second background element for smooth crossfade transition */
+#keycloak-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1.5s ease-in-out;
 }
 
 .pf-v5-theme-dark #keycloak-bg::before {
