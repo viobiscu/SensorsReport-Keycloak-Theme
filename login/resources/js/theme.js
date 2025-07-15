@@ -33,19 +33,24 @@ document.addEventListener('DOMContentLoaded', function() {
   setupDevModeRefresh();
 });
 
-// Background configuration - images are kept for reference
-const backgrounds = [
-  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse-02.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse-03.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/pharmaceutical-warehouse-04.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/food-wine-warehouse.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/food-wine-warehouse-02.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/food-wine-warehouse-03.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/meat-fish-warehouse.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/meat-fish-warehouse-02.jpg', // Absolute path
-  '/resources/rwm2c/login/sensorsreport/img/meat-fish-warehouse-04.jpg' // Absolute path
-];
+// Background configuration - using dynamic resource paths
+function getBackgroundPaths() {
+  const basePath = window.KEYCLOAK_RESOURCE_PATH || '/resources';
+  const images = [
+    'pharmaceutical-warehouse.jpg',
+    'pharmaceutical-warehouse-02.jpg', 
+    'pharmaceutical-warehouse-03.jpg',
+    'pharmaceutical-warehouse-04.jpg',
+    'food-wine-warehouse.jpg',
+    'food-wine-warehouse-02.jpg',
+    'food-wine-warehouse-03.jpg',
+    'meat-fish-warehouse.jpg',
+    'meat-fish-warehouse-02.jpg',
+    'meat-fish-warehouse-04.jpg'
+  ];
+  
+  return images.map(image => `${basePath}/img/${image}`);
+}
 
 /**
  * Sets up rotating background images with smooth crossfade transition effects
@@ -54,6 +59,9 @@ function setupRotatingBackground() {
   const bgElement = document.getElementById('keycloak-bg');
   if (!bgElement) return;
 
+  // Get dynamic background paths
+  const backgrounds = getBackgroundPaths();
+  
   let currentIndex = 0;
   let nextIndex = 1;
   

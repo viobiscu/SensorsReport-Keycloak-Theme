@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="${locale}">
+<html lang="${locale!'en'}">>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,28 +7,33 @@
     
     <title>${msg("accountManagementTitle")} - SensorsReport</title>
     
-    <link rel="icon" href="${url.resourcesPath}/${properties.favIconUrl}">
+    <link rel="icon" href="${(url.resourcesPath)!'/resources'}/${(properties.favIconUrl)!'favicon.ico'}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
-            <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
+            <link href="${(url.resourcesPath)!'/resources'}/${style}" rel="stylesheet" />
         </#list>
     </#if>
     
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
-            <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
+            <script src="${(url.resourcesPath)!'/resources'}/${script}" type="text/javascript"></script>
         </#list>
     </#if>
+    
+    <!-- Pass the dynamic resource path to JavaScript -->
+    <script>
+        window.KEYCLOAK_RESOURCE_PATH = "${(url.resourcesPath)!'/resources'}";
+    </script>
 </head>
 
 <body class="sr-account-page">
     <div id="sr-account-container">
         <header class="sr-account-header">
             <div class="sr-logo-container">
-                <img src="${url.resourcesPath}/${properties.logoUrl}" alt="${properties.logoAlt}" class="sr-logo">
+                <img src="${(url.resourcesPath)!'/resources'}/${(properties.logoUrl)!'img/logo.png'}" alt="${(properties.logoAlt)!'SensorsReport'}" class="sr-logo">
             </div>
             <h1>${msg("accountManagementTitle")}</h1>
             <p class="sr-account-tagline">Manage your SensorsReport account settings and security preferences</p>

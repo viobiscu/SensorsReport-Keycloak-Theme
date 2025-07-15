@@ -93,6 +93,11 @@
             <script type="text/javascript" src="${resourcesPath}/${script}"></script>
         </#list>
     </#if>
+    
+    <!-- Pass the dynamic resource path to JavaScript -->
+    <script>
+        window.KEYCLOAK_RESOURCE_PATH = "${resourcesPath}";
+    </script>
 </body>
 </html>
 </#macro>

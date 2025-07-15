@@ -8,7 +8,7 @@
     <div class="${properties.kcInputGroup}">
       <div class="${properties.kcInputGroupItemClass} ${properties.kcFill}">
         <span class="${properties.kcInputClass} ${properties.kcFormReadOnlyClass}">
-          <input id="kc-attempted-username" value="${auth.attemptedUsername}" readonly>
+          <input id="kc-attempted-username" value="${(auth.attemptedUsername)!''}" readonly>
         </span>
       </div>
       <div class="${properties.kcInputGroupItemClass}">
@@ -24,13 +24,13 @@
 
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false>
 <!DOCTYPE html>
-<html class="${properties.kcHtmlClass!}" lang="${lang}"<#if realm.internationalizationEnabled> dir="${(locale.rtl)?then('rtl','ltr')}"</#if>>
+<html class="${properties.kcHtmlClass!}" lang="${lang!'en'}"<#if realm.internationalizationEnabled> dir="${(locale.rtl)?then('rtl','ltr')}"</#if>>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
-    <meta name="color-scheme" content="light${darkMode?then(' dark', '')}">
+    <meta name="color-scheme" content="light${(darkMode!false)?then(' dark', '')}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <#if properties.meta?has_content>
@@ -62,7 +62,7 @@
         }
     </script>
     
-    <#if darkMode>
+    <#if (darkMode!false)>
       <script type="module" async blocking="render">
           const DARK_MODE_CLASS = "${properties.kcDarkModeClass}";
           const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -105,13 +105,18 @@
             import { checkAuthSession } from "${url.resourcesPath}/js/authChecker.js";
 
             checkAuthSession(
-                "${authenticationSession.authSessionIdHash}"
+                "${(authenticationSession.authSessionIdHash)!'default-session-hash'}"
             );
         </script>
     </#if>
+    
+    <!-- Pass the dynamic resource path to JavaScript -->
+    <script>
+        window.KEYCLOAK_RESOURCE_PATH = "${url.resourcesPath}";
+    </script>
 </head>
 
-<body id="keycloak-bg" class="${properties.kcBodyClass!}" data-page-id="login-${pageId}">
+<body id="keycloak-bg" class="${properties.kcBodyClass!}" data-page-id="login-${(pageId)!'unknown'}">
 <div class="${properties.kcLogin!}">
   <header id="kc-header" class="pf-v5-c-login__header sr-login-header">
     <div id="kc-header-wrapper" class="pf-v5-c-brand">
