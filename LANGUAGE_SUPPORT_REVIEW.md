@@ -51,6 +51,38 @@
 - ✅ Flag icon: `login/resources/img/flags/gb.png` (already existed)
 - ✅ CSS classes: `.flag-gb` (added to CSS)
 
+### 🇭🇺 Hungarian (hu)
+- ✅ Login messages: `login/messages/messages_hu.properties`
+- ✅ Admin messages: `admin/messages/messages_hu.properties`
+- ✅ Email messages: `email/messages/messages_hu.properties`
+- ⚠️ Account messages: `account/messages/messages_hu.properties` (needs creation)
+- ⚠️ Flag icon: `login/resources/img/flags/hu.png` (placeholder - needs real flag image)
+- ✅ CSS classes: `.flag-hu` (added to CSS)
+
+### 🇮🇹 Italian (it)
+- ✅ Login messages: `login/messages/messages_it.properties`
+- ✅ Admin messages: `admin/messages/messages_it.properties`
+- ✅ Email messages: `email/messages/messages_it.properties`
+- ⚠️ Account messages: `account/messages/messages_it.properties` (needs creation)
+- ⚠️ Flag icon: `login/resources/img/flags/it.png` (placeholder - needs real flag image)
+- ✅ CSS classes: `.flag-it` (added to CSS)
+
+### 🇵🇱 Polish (pl)
+- ✅ Login messages: `login/messages/messages_pl.properties`
+- ✅ Admin messages: `admin/messages/messages_pl.properties`
+- ✅ Email messages: `email/messages/messages_pl.properties`
+- ⚠️ Account messages: `account/messages/messages_pl.properties` (needs creation)
+- ⚠️ Flag icon: `login/resources/img/flags/pl.png` (placeholder - needs real flag image)
+- ✅ CSS classes: `.flag-pl` (added to CSS)
+
+### 🇹🇷 Turkish (tr)
+- ✅ Login messages: `login/messages/messages_tr.properties`
+- ✅ Admin messages: `admin/messages/messages_tr.properties`
+- ✅ Email messages: `email/messages/messages_tr.properties`
+- ⚠️ Account messages: `account/messages/messages_tr.properties` (needs creation)
+- ⚠️ Flag icon: `login/resources/img/flags/tr.png` (placeholder - needs real flag image)
+- ✅ CSS classes: `.flag-tr` (added to CSS)
+
 ## CSS Updates Made
 
 Updated `login/resources/css/styles.css` to include support for the GB flag:
