@@ -240,7 +240,7 @@ body {
 }
 
 /* Ensure flag background images are visible */
-.flag-en, .flag-ro, .flag-de, .flag-es, .flag-fr {
+.flag-en, .flag-ro, .flag-de, .flag-es, .flag-fr, .flag-gb, .flag-hu, .flag-it, .flag-pl, .flag-tr {
   background-position: 10px center !important;
   background-repeat: no-repeat !important;
   background-size: 20px auto !important;
@@ -279,6 +279,26 @@ body {
 
 .flag-es, .flag-option[data-flag="es"] {
   background-image: url('../img/flags/es.png') !important;
+}
+
+.flag-gb, .flag-option[data-flag="gb"] {
+  background-image: url('../img/flags/gb.png') !important;
+}
+
+.flag-hu, .flag-option[data-flag="hu"] {
+  background-image: url('../img/flags/hu.png') !important;
+}
+
+.flag-it, .flag-option[data-flag="it"] {
+  background-image: url('../img/flags/it.png') !important;
+}
+
+.flag-pl, .flag-option[data-flag="pl"] {
+  background-image: url('../img/flags/pl.png') !important;
+}
+
+.flag-tr, .flag-option[data-flag="tr"] {
+  background-image: url('../img/flags/tr.png') !important;
 }
 
 /* Add additional styles for proper dropdown display */
@@ -740,7 +760,12 @@ input[type="password"] {
 #login-select-toggle.flag-ro,
 #login-select-toggle.flag-de,
 #login-select-toggle.flag-fr,
-#login-select-toggle.flag-es {
+#login-select-toggle.flag-es,
+#login-select-toggle.flag-gb,
+#login-select-toggle.flag-hu,
+#login-select-toggle.flag-it,
+#login-select-toggle.flag-pl,
+#login-select-toggle.flag-tr {
   background-position: 10px center !important;
   background-repeat: no-repeat !important;
   background-size: 20px auto !important;

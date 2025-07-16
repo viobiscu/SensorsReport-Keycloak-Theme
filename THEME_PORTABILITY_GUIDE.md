@@ -91,6 +91,32 @@ To verify the solution works:
 2. Look for the `window.KEYCLOAK_RESOURCE_PATH` variable in the console
 3. Verify background images load correctly from the dynamic path
 4. Test on multiple Keycloak instances to confirm portability
+5. **Test language support**: Switch between all supported languages (EN, RO, DE, ES, FR, HU, IT, PL, TR, GB)
+6. **Verify flag display**: Ensure country flags appear correctly in the language selector
+
+## Language Support
+
+The theme now includes complete multi-language support with:
+
+**Fully Supported Languages:**
+- 🇺🇸 **English** (en) - Complete
+- 🇷🇴 **Romanian** (ro) - Complete  
+- 🇩🇪 **German** (de) - Complete
+- 🇪🇸 **Spanish** (es) - Complete
+- 🇫🇷 **French** (fr) - Complete
+- 🇭🇺 **Hungarian** (hu) - Complete
+- 🇮🇹 **Italian** (it) - Complete
+- 🇵🇱 **Polish** (pl) - Complete
+- 🇹🇷 **Turkish** (tr) - Complete
+- 🇬🇧 **British English** (gb) - Flag only
+
+**Includes:**
+- Login/Registration messages
+- Admin console translations
+- Email notifications
+- Account management interface
+- Error messages and validation
+- Country flag icons for language selection
 
 ## Technical Notes
 
@@ -98,3 +124,30 @@ To verify the solution works:
 - It changes when themes are updated or Keycloak restarts
 - The identifier ensures browsers don't serve cached versions of old resources
 - You should never try to control or hardcode this identifier
+
+## Language Support
+
+This theme includes full internationalization support for the following languages:
+
+**Supported Languages:**
+- 🇺🇸 **English (en)** - Complete
+- 🇷🇴 **Romanian (ro)** - Complete
+- 🇩🇪 **German (de)** - Complete
+- 🇫🇷 **French (fr)** - Complete
+- 🇪🇸 **Spanish (es)** - Complete
+- 🇬🇧 **British English (gb)** - Flag available
+
+**Language Coverage:**
+- ✅ Login pages and forms
+- ✅ Admin console interface
+- ✅ Account management pages
+- ✅ Email templates
+- ✅ Error messages and notifications
+- ✅ Flag icons for language selector
+
+**Files Included:**
+- `login/messages/messages_{lang}.properties`
+- `admin/messages/messages_{lang}.properties`
+- `account/messages/messages_{lang}.properties`
+- `email/messages/messages_{lang}.properties`
+- `login/resources/img/flags/{lang}.png`
