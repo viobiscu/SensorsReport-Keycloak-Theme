@@ -107,6 +107,14 @@ body {
   grid-template-rows: unset !important;
   grid-template-areas: unset !important;
   min-height: unset !important;
+  /* Override PF5 custom variables for container */
+  --pf-v5-c-login__container--MaxWidth: 100% !important;
+  --pf-v5-c-login__container--xl--MaxWidth: 100% !important;
+  --pf-v5-c-login__container--xl--GridTemplateColumns: 1fr !important;
+  --pf-v5-c-login__container--PaddingLeft: 0 !important;
+  --pf-v5-c-login__container--PaddingRight: 0 !important;
+  --pf-v5-c-login__main--MarginBottom: 0 !important;
+  --pf-v5-c-login__main--BoxShadow: none !important;
 }
 
 /* ─── Card header bar (logo + controls) ─── */
@@ -157,8 +165,14 @@ body {
   overflow: hidden;
   background-color: var(--tg-card-background);
   box-sizing: border-box;
-  /* Reset PF5 grid placement */
+  /* Reset PF5 grid/layout */
+  display: block !important;
   grid-area: unset !important;
+  grid-template-columns: unset !important;
+  grid-template-areas: unset !important;
+  grid-column-gap: unset !important;
+  padding-inline-start: 0 !important;
+  padding-inline-end: 0 !important;
 }
 
 .pf-v5-theme-dark .pf-v5-c-login__container {
@@ -179,6 +193,8 @@ body {
   /* Reset PF5 grid placement */
   grid-area: unset !important;
   grid-column: unset !important;
+  align-self: unset !important;
+  margin-block-end: 0 !important;
 }
 
 .pf-v5-theme-dark .pf-v5-c-login__main {
