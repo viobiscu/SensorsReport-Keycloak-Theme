@@ -144,6 +144,7 @@ body {
   border-top: 1px solid var(--tg-border-color);
   overflow: hidden;
   background-color: var(--tg-card-background);
+  box-sizing: border-box;
 }
 
 .pf-v5-theme-dark .pf-v5-c-login__container {
@@ -158,6 +159,7 @@ body {
   box-shadow: none;
   border: none;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .pf-v5-theme-dark .pf-v5-c-login__main {
@@ -178,6 +180,8 @@ body {
 
 .pf-v5-c-login__main-body {
   padding: 2rem;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* Brand/Logo styling — fallback for non-card-header contexts */
@@ -378,6 +382,8 @@ body {
   font-size: 0.975rem;
   background-color: var(--tg-card-background);
   color: var(--tg-text-color);
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .pf-v5-c-form-control:hover {
@@ -403,6 +409,8 @@ body {
   background: linear-gradient(to bottom, rgba(8, 112, 163, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
   border-radius: 12px;
   padding: 1.5rem 1.5rem 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .pf-v5-theme-dark .termograf-form-wrapper {
@@ -560,7 +568,7 @@ body {
 
 /* Position the toggle button correctly within the input container */
 .pf-v5-c-input-group, 
-div[dir="ltr"] {
+.pf-v5-c-form__group div[dir="ltr"] {
   position: relative;
   display: inline-block;
   width: 100%;
