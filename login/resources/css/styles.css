@@ -84,17 +84,29 @@ body {
   background: linear-gradient(120deg, rgba(10, 147, 150, 0.3), rgba(0, 0, 0, 0.8));
 }
 
-/* Main login wrapper */
+/* Ensure all elements inside login use border-box */
+.pf-v5-c-login *,
+.pf-v5-c-login *::before,
+.pf-v5-c-login *::after {
+  box-sizing: border-box;
+}
+
+/* Main login wrapper — override PF5 grid layout */
 .pf-v5-c-login {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 32rem;
+  max-width: 32rem !important;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
   padding: 2rem 1rem;
+  /* Reset PF5 grid properties */
+  grid-template-columns: unset !important;
+  grid-template-rows: unset !important;
+  grid-template-areas: unset !important;
+  min-height: unset !important;
 }
 
 /* ─── Card header bar (logo + controls) ─── */
@@ -136,8 +148,8 @@ body {
 .pf-v5-c-login__container {
   position: relative;
   z-index: 2;
-  max-width: 100%;
-  width: 100%;
+  max-width: 100% !important;
+  width: 100% !important;
   border-radius: 0 0 12px 12px;
   box-shadow: 0 10px 30px var(--tg-shadow-color);
   border: 1px solid var(--tg-border-color);
@@ -145,6 +157,8 @@ body {
   overflow: hidden;
   background-color: var(--tg-card-background);
   box-sizing: border-box;
+  /* Reset PF5 grid placement */
+  grid-area: unset !important;
 }
 
 .pf-v5-theme-dark .pf-v5-c-login__container {
@@ -159,7 +173,12 @@ body {
   box-shadow: none;
   border: none;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box;
+  /* Reset PF5 grid placement */
+  grid-area: unset !important;
+  grid-column: unset !important;
 }
 
 .pf-v5-theme-dark .pf-v5-c-login__main {
@@ -180,7 +199,7 @@ body {
 
 .pf-v5-c-login__main-body {
   padding: 2rem;
-  overflow-x: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -570,8 +589,9 @@ body {
 .pf-v5-c-input-group, 
 .pf-v5-c-form__group div[dir="ltr"] {
   position: relative;
-  display: inline-block;
+  display: block;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Ensure input fields with toggle buttons have enough padding */
