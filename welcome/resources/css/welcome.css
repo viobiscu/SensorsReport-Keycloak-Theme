@@ -32,8 +32,8 @@
   filter: brightness(1.2) contrast(1.1);
 }
 
-/* SensorsReport custom styling */
-.sensorsreport-welcome-title {
+/* Termograf custom styling */
+.termograf-welcome-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 500;
@@ -41,15 +41,15 @@
   transition: color 0.3s ease;
 }
 
-.sensorsreport-welcome-text {
+.termograf-welcome-text {
   margin-bottom: 1rem;
   color: var(--pf-v5-global--Color--200);
   transition: color 0.3s ease;
 }
 
 .pf-v5-c-login__main-header {
-  border-top: 4px solid var(--sr-primary-color);
-  background-color: var(--sr-card-background);
+  border-top: 4px solid var(--tg-primary-color);
+  background-color: var(--tg-card-background);
   transition: all 0.3s ease;
 }
 
@@ -60,16 +60,16 @@
 }
 
 /* Theme toggle button */
-.sr-theme-toggle {
+.tg-theme-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--sr-card-background);
-  color: var(--sr-primary-color);
-  border: 1px solid var(--sr-border-color);
+  background-color: var(--tg-card-background);
+  color: var(--tg-primary-color);
+  border: 1px solid var(--tg-border-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,21 +79,21 @@
   backdrop-filter: blur(8px);
 }
 
-.sr-theme-toggle:hover {
+.tg-theme-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--sr-shadow-color);
-  border-color: var(--sr-secondary-color);
-  color: var(--sr-secondary-color);
+  box-shadow: 0 4px 8px var(--tg-shadow-color);
+  border-color: var(--tg-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
-.pf-v5-theme-dark .sr-theme-toggle {
+.pf-v5-theme-dark .tg-theme-toggle {
   background-color: rgba(0, 180, 216, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
-.pf-v5-theme-dark .sr-theme-toggle:hover {
+.pf-v5-theme-dark .tg-theme-toggle:hover {
   background-color: rgba(0, 180, 216, 0.2);
-  border-color: var(--sr-secondary-color);
+  border-color: var(--tg-secondary-color);
   box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
 }

@@ -1,4 +1,4 @@
-<#ftl output_format="HTML">
+﻿<#ftl output_format="HTML">
 <#macro emailLayout>
 <!DOCTYPE html>
 <html>
@@ -15,14 +15,14 @@
 </head>
 <body>
     <div class="header">
-        <img src="cid:logo" alt="SensorsReport" style="max-height: 65px;" />
+        <img src="cid:logo" alt="Termograf" style="max-height: 65px;" />
     </div>
     <div class="body">
         <h2>${msg("greeting", user.firstName!"")}</h2>
         <#nested>
     </div>
     <div class="footer">
-        <p>&copy; ${.now?string('yyyy')} SensorsReport. ${msg("allRightsReserved")}</p>
+        <p>&copy; ${.now?string('yyyy')} Termograf. ${msg("allRightsReserved")}</p>
     </div>
 </body>
 </html>

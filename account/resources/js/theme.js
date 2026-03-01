@@ -1,5 +1,5 @@
 /**
- * SensorsReport Account theme custom JavaScript
+ * Termograf Account theme custom JavaScript
  * This file contains enhancements for the account management experience
  * Consistent with the login theme animations and interactions
  */
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function animateAccountElements() {
   // Animate header elements
-  const header = document.querySelector('.sr-account-header');
+  const header = document.querySelector('.tg-account-header');
   if (header) {
     header.style.opacity = '0';
     header.style.transform = 'translateY(10px)';
@@ -41,7 +41,7 @@ function animateAccountElements() {
   }
   
   // Animate card elements with sequential timing
-  const accountSections = document.querySelectorAll('.sr-account-section, .sr-account-card, .sr-account-welcome');
+  const accountSections = document.querySelectorAll('.tg-account-section, .tg-account-card, .tg-account-welcome');
   if (accountSections.length) {
     accountSections.forEach((element, index) => {
       element.style.opacity = '0';
@@ -121,7 +121,7 @@ function enhanceInputFields() {
  * Sets up interactive hover effects for account section cards
  */
 function setupInteractiveCards() {
-  const cards = document.querySelectorAll('.sr-account-section');
+  const cards = document.querySelectorAll('.tg-account-section');
   
   if (cards.length) {
     cards.forEach(card => {
@@ -139,7 +139,7 @@ function setupInteractiveCards() {
       // Add click ripple effect
       card.addEventListener('click', function(e) {
         // Only apply effect if clicking on the card itself, not on buttons or links
-        if (e.target === this || e.target.closest('.sr-account-section-content')) {
+        if (e.target === this || e.target.closest('.tg-account-section-content')) {
           const ripple = document.createElement('div');
           ripple.className = 'ripple-effect';
           
@@ -200,7 +200,7 @@ function setupPasswordVisibility() {
  */
 function setupThemeToggle() {
   // Check for existing theme toggle button
-  let themeToggle = document.querySelector('.sr-theme-toggle');
+  let themeToggle = document.querySelector('.tg-theme-toggle');
   
   // If no toggle exists, create one
   if (!themeToggle) {
@@ -210,7 +210,7 @@ function setupThemeToggle() {
     themeToggle.innerHTML = '<i class="fa fa-moon"></i>';
     
     // Append to header or another appropriate location
-    const header = document.querySelector('.sr-account-header');
+    const header = document.querySelector('.tg-account-header');
     if (header) {
       header.appendChild(themeToggle);
     } else {

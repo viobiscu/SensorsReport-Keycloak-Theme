@@ -51,7 +51,7 @@
         </#list>
     </#if>
     
-    <!-- Add Google Font for SensorsReport Theme -->
+    <!-- Add Google Font for Termograf Theme -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     
     <script type="importmap">
@@ -118,16 +118,14 @@
 
 <body id="keycloak-bg" class="${properties.kcBodyClass!}" data-page-id="login-${(pageId)!'unknown'}">
 <div class="${properties.kcLogin!}">
-  <header id="kc-header" class="pf-v5-c-login__header sr-login-header">
-    <div id="kc-header-wrapper" class="pf-v5-c-brand">
-      <img src="${url.resourcesPath}/img/SensorsReport.png" alt="SensorsReport Logo" class="sensors-report-logo">
+  <header id="kc-header" class="tg-card-header">
+    <div id="kc-header-wrapper" class="tg-card-header-logo">
+      <img src="${url.resourcesPath}/img/Termograf.svg" alt="Termograf Logo" class="termograf-logo">
     </div>
-    
-    <!-- Create the header controls container for both toggles -->
-    <div class="sr-header-controls">
+    <div class="tg-header-controls">
       <!-- Theme toggle will be added via JavaScript -->
       <#if realm.internationalizationEnabled && locale.supported?size gt 1>
-      <div class="sr-language-selector">
+      <div class="tg-language-selector">
         <div class="language-selector-container">
           <select
             aria-label="${msg("languages")}"

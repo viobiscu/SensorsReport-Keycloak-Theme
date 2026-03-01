@@ -1,4 +1,4 @@
-<#macro mainLayout active bodyClass>
+﻿<#macro mainLayout active bodyClass>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +26,7 @@
     <nav class="navbar navbar-default navbar-pf" role="navigation">
         <div class="navbar-header">
             <a class="navbar-brand" href="${adminConsoleBaseUri}">
-                <img class="navbar-brand-icon" src="${resourcesPath}/img/SensorsReport_logo.png" alt="SensorsReport Logo" />
+                <img class="navbar-brand-icon" src="${resourcesPath}/img/Termograf_logo.svg" alt="Termograf Logo" />
             </a>
         </div>
         <div class="navbar-collapse navbar-collapse-1">

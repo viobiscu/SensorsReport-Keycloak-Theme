@@ -1,5 +1,5 @@
-/**
- * SensorsReport Admin Theme JavaScript
+﻿/**
+ * Termograf Admin Theme JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -1,5 +1,5 @@
 /**
- * SensorsReport theme custom JavaScript
+ * Termograf theme custom JavaScript
  * This file contains enhancements for the login and registration experience
  */
 
@@ -37,16 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function getBackgroundPaths() {
   const basePath = window.KEYCLOAK_RESOURCE_PATH || '/resources';
   const images = [
-    'pharmaceutical-warehouse.jpg',
-    'pharmaceutical-warehouse-02.jpg', 
-    'pharmaceutical-warehouse-03.jpg',
-    'pharmaceutical-warehouse-04.jpg',
-    'food-wine-warehouse.jpg',
-    'food-wine-warehouse-02.jpg',
-    'food-wine-warehouse-03.jpg',
-    'meat-fish-warehouse.jpg',
-    'meat-fish-warehouse-02.jpg',
-    'meat-fish-warehouse-04.jpg'
+    'termograf-product-01.jpg',
+    'termograf-product-02.jpg'
   ];
   
   return images.map(image => `${basePath}/img/${image}`);
@@ -135,7 +127,7 @@ function setupRotatingBackground() {
  * Applies subtle entrance animations to form elements
  */
 function animateFormElements() {
-  const formWrapper = document.querySelector('.sensors-report-form-wrapper');
+  const formWrapper = document.querySelector('.termograf-form-wrapper');
   
   if (formWrapper) {
     // Add animation classes
@@ -151,7 +143,7 @@ function animateFormElements() {
   }
   
   // Animate form fields with sequential timing
-  const formElements = document.querySelectorAll('.pf-v5-c-form__group, .sensors-report-form-header, #kc-form-buttons');
+  const formElements = document.querySelectorAll('.pf-v5-c-form__group, .termograf-form-header, #kc-form-buttons');
   if (formElements.length) {
     formElements.forEach((element, index) => {
       element.style.opacity = '0';
@@ -445,16 +437,16 @@ function enhanceLanguageSelector() {
  */
 function setupThemeToggle() {
   // Create the theme toggle button if it doesn't exist
-  let themeToggle = document.querySelector('.sr-theme-toggle');
+  let themeToggle = document.querySelector('.tg-theme-toggle');
   
   if (!themeToggle) {
     themeToggle = document.createElement('button');
-    themeToggle.className = 'sr-theme-toggle';
+    themeToggle.className = 'tg-theme-toggle';
     themeToggle.setAttribute('aria-label', 'Toggle light/dark theme');
     themeToggle.innerHTML = '<i class="fa fa-moon"></i>';
     
     // Find the header controls container to insert the toggle
-    const headerControls = document.querySelector('.sr-header-controls');
+    const headerControls = document.querySelector('.tg-header-controls');
     if (headerControls) {
       // Add the theme toggle as the first child of the header controls
       if (headerControls.firstChild) {
@@ -463,8 +455,8 @@ function setupThemeToggle() {
         headerControls.appendChild(themeToggle);
       }
     } else {
-      // Fallback to the header if controls container not found
-      const header = document.querySelector('.sr-login-header');
+      // Fallback to the card header
+      const header = document.querySelector('.tg-card-header');
       if (header) {
         header.appendChild(themeToggle);
       } else {

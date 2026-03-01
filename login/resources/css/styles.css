@@ -1,44 +1,44 @@
-/* SensorsReport Custom Theme Styles */
+/* Termograf Custom Theme Styles */
 
 :root {
   /* Enhanced light theme with more vibrant colors and better contrast */
-  --sr-primary-color: #0870a3;
-  --sr-secondary-color: #1e90ff;
-  --sr-accent-color: #ff8400;
-  --sr-text-color: #112233;
-  --sr-background-color: #f8faff;
-  --sr-card-background: #ffffff;
-  --sr-border-color: #d0e0ef;
-  --sr-footer-text-color: #5a6b7b;
-  --sr-footer-link-color: #0870a3;
-  --sr-shadow-color: rgba(8, 112, 163, 0.15);
-  --sr-hover-bg: rgba(30, 144, 255, 0.08);
-  --sr-focus-ring: rgba(30, 144, 255, 0.25);
+  --tg-primary-color: #0870a3;
+  --tg-secondary-color: #1e90ff;
+  --tg-accent-color: #ff8400;
+  --tg-text-color: #112233;
+  --tg-background-color: #f8faff;
+  --tg-card-background: #ffffff;
+  --tg-border-color: #d0e0ef;
+  --tg-footer-text-color: #5a6b7b;
+  --tg-footer-link-color: #0870a3;
+  --tg-shadow-color: rgba(8, 112, 163, 0.15);
+  --tg-hover-bg: rgba(30, 144, 255, 0.08);
+  --tg-focus-ring: rgba(30, 144, 255, 0.25);
 }
 
 .pf-v5-theme-dark {
-  --sr-primary-color: #00b4d8;
-  --sr-secondary-color: #48cae4;
-  --sr-accent-color: #ffd60a;
-  --sr-text-color: #ffffff;
-  --sr-background-color: var(--sensorsreport-dark-bg-color);
-  --sr-card-background: var(--sensorsreport-dark-card-bg);
-  --sr-border-color: var(--sensorsreport-dark-border-color);
-  --sr-footer-text-color: #adb5bd;
-  --sr-footer-link-color: #48cae4;
-  --sr-shadow-color: rgba(0, 180, 216, 0.2);
-  --sr-hover-bg: rgba(0, 180, 216, 0.15);
-  --sr-focus-ring: rgba(0, 180, 216, 0.4);
+  --tg-primary-color: #00b4d8;
+  --tg-secondary-color: #48cae4;
+  --tg-accent-color: #ffd60a;
+  --tg-text-color: #ffffff;
+  --tg-background-color: var(--termograf-dark-bg-color);
+  --tg-card-background: var(--termograf-dark-card-bg);
+  --tg-border-color: var(--termograf-dark-border-color);
+  --tg-footer-text-color: #adb5bd;
+  --tg-footer-link-color: #48cae4;
+  --tg-shadow-color: rgba(0, 180, 216, 0.2);
+  --tg-hover-bg: rgba(0, 180, 216, 0.15);
+  --tg-focus-ring: rgba(0, 180, 216, 0.4);
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
 }
 
 /* Background styling */
 #keycloak-bg {
-  background-color: var(--sr-background-color);
+  background-color: var(--tg-background-color);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -89,145 +89,161 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 36rem;
+  max-width: 32rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 80px; /* Add space for the header */
+  align-items: stretch;
+  padding: 2rem 1rem;
 }
 
+/* ─── Card header bar (logo + controls) ─── */
+.tg-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--tg-card-background);
+  border: 1px solid var(--tg-border-color);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 -4px 20px var(--tg-shadow-color);
+}
+
+.pf-v5-theme-dark .tg-card-header {
+  background-color: rgba(30, 30, 30, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.tg-card-header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.tg-card-header-logo .termograf-logo {
+  height: 30px;
+  width: auto;
+}
+
+/* Header controls container */
+.tg-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ─── Card body (container + main) ─── */
 .pf-v5-c-login__container {
   position: relative;
   z-index: 2;
   max-width: 100%;
   width: 100%;
-  padding: 0 1.5rem;
-}
-
-.pf-v5-c-login__main {
-  background-color: var(--sr-card-background);
-  border-radius: 12px;
-  box-shadow: 0 10px 30px var(--sr-shadow-color);
-  border: 1px solid var(--sr-border-color);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 10px 30px var(--tg-shadow-color);
+  border: 1px solid var(--tg-border-color);
+  border-top: 1px solid var(--tg-border-color);
   overflow: hidden;
-  backdrop-filter: blur(10px);
+  background-color: var(--tg-card-background);
 }
 
-.pf-v5-theme-dark .pf-v5-c-login__main {
+.pf-v5-theme-dark .pf-v5-c-login__container {
   background-color: rgba(30, 30, 30, 0.95);
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
+.pf-v5-c-login__main {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  overflow: hidden;
+}
+
+.pf-v5-theme-dark .pf-v5-c-login__main {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
 .pf-v5-c-login__main-header {
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid var(--sr-border-color);
-  background-color: rgba(8, 112, 163, 0.03); /* Very subtle blue background for header */
+  border-bottom: 1px solid var(--tg-border-color);
+  background-color: rgba(8, 112, 163, 0.03);
 }
 
 .pf-v5-theme-dark .pf-v5-c-login__main-header {
-  background-color: rgba(10, 147, 150, 0.05); /* Subtle teal background for dark theme */
+  background-color: rgba(10, 147, 150, 0.05);
 }
 
 .pf-v5-c-login__main-body {
   padding: 2rem;
 }
 
-/* Brand/Logo styling */
+/* Brand/Logo styling — fallback for non-card-header contexts */
 .pf-v5-c-brand {
   display: flex;
   justify-content: center;
   padding: 1rem 0;
 }
 
-/* Header controls layout */
-.sr-login-header {
-  width: 100%;
-  padding: 1rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-  height: 64px;
-}
-
-/* Logo styling */
-.sr-login-header .pf-v5-c-brand {
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.sensors-report-logo {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-
-/* Header controls container */
-.sr-header-controls {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+/* Remove old floating header class if still referenced */
+.tg-login-header {
+  display: none;
 }
 
 /* Language selector styling */
-.sr-language-selector {
+.tg-language-selector {
   position: relative;
-  z-index: 10; /* Ensure dropdown appears above other elements */
+  z-index: 10;
 }
 
 .language-selector-container {
   position: relative;
-  height: 40px;
+  height: 36px;
 }
 
 #login-select-toggle {
-  height: 40px;
-  line-height: 38px; /* Vertically center text, accounting for 1px top/bottom border */
-  padding: 0 2.5rem 0 40px; /* Consistent padding: T/B 0, R 2.5rem, L 40px */
+  height: 36px;
+  line-height: 34px;
+  padding: 0 2.25rem 0 36px;
   border-radius: 6px;
-  border: 1px solid var(--sr-border-color);
-  background-color: var(--sr-card-background);
-  color: var(--sr-text-color) !important; /* Ensure text color is applied */
-  font-size: 0.875rem;
-  min-width: 160px;
+  border: 1px solid var(--tg-border-color);
+  background-color: var(--tg-card-background);
+  color: var(--tg-text-color) !important;
+  font-size: 0.8rem;
+  min-width: 140px;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-position: 10px center !important; /* Ensure flag position */
-  background-repeat: no-repeat !important; /* Ensure flag repeat */
-  background-size: 20px auto !important; /* Ensure flag size */
+  background-position: 8px center !important;
+  background-repeat: no-repeat !important;
+  background-size: 18px auto !important;
   cursor: pointer;
-  position: relative; /* For z-index and positioning context */
-  z-index: 5; /* From previous rule */
+  position: relative;
+  z-index: 5;
 }
 
 /* Theme toggle button */
-.sr-theme-toggle {
-  width: 40px;
-  height: 40px;
+.tg-theme-toggle {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--sr-border-color);
-  background-color: var(--sr-card-background);
-  color: var(--sr-primary-color);
+  border: 1px solid var(--tg-border-color);
+  background-color: var(--tg-card-background);
+  color: var(--tg-primary-color);
   cursor: pointer;
   transition: all 0.2s ease;
+  font-size: 0.85rem;
 }
 
 /* Improved contrast for dropdown options */
 #login-select-toggle option {
-  background-color: var(--sr-card-background) !important;
-  color: var(--sr-text-color) !important;
+  background-color: var(--tg-card-background) !important;
+  color: var(--tg-text-color) !important;
   padding: 8px 10px 8px 40px !important;
   min-height: 30px !important;
   display: flex !important;
@@ -319,12 +335,12 @@ body {
 }
 
 /* Language selector and flag styling - improved */
-.sr-language-selector .language-selector-container {
+.tg-language-selector .language-selector-container {
   position: relative;
   display: inline-block;
 }
 
-.sr-language-selector .language-selector-container::after {
+.tg-language-selector .language-selector-container::after {
   content: '';
   position: absolute;
   right: 10px;
@@ -334,131 +350,186 @@ body {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--sr-text-color);
+  border-top: 5px solid var(--tg-text-color);
   pointer-events: none;
 }
 
-.sr-login-header .pf-v5-c-brand img {
-  max-width: 220px;
-  height: auto;
-}
-
-.login-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--sr-primary-color);
-  letter-spacing: -0.5px;
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-.login-title span {
-  font-weight: 900;
-}
-
-.sensors-report-logo {
-  max-width: 200px;
-  height: auto;
+.termograf-logo {
+  max-width: 180px;
+  height: 32px;
+  width: auto;
 }
 
 /* Page title styling */
 .pf-v5-c-title.pf-m-3xl {
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
   font-weight: 600;
   text-align: center;
 }
 
+/* Page header hidden on login page via inline style in login.ftl */
+
 /* Form elements styling */
 .pf-v5-c-form-control {
   border-radius: 6px;
-  border-color: var(--sr-border-color);
+  border-color: var(--tg-border-color);
   transition: all 0.2s ease;
   padding: 0.75rem 1rem;
   font-size: 0.975rem;
-  background-color: var(--sr-card-background);
-  color: var(--sr-text-color);
+  background-color: var(--tg-card-background);
+  color: var(--tg-text-color);
 }
 
 .pf-v5-c-form-control:hover {
-  border-color: var(--sr-secondary-color);
-  box-shadow: 0 2px 4px var(--sr-shadow-color);
+  border-color: var(--tg-secondary-color);
+  box-shadow: 0 2px 4px var(--tg-shadow-color);
 }
 
 .pf-v5-c-form-control:focus {
-  border-color: var(--sr-primary-color);
-  box-shadow: 0 0 0 3px var(--sr-focus-ring);
+  border-color: var(--tg-primary-color);
+  box-shadow: 0 0 0 3px var(--tg-focus-ring);
   outline: none;
 }
 
 .pf-v5-c-form__label-text {
   font-weight: 600; /* Bolder labels for light theme */
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
   font-size: 0.875rem;
 }
 
 /* Custom Form Styling */
-.sensors-report-form-wrapper {
+.termograf-form-wrapper {
   max-width: 100%;
   background: linear-gradient(to bottom, rgba(8, 112, 163, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.5rem 1.5rem 1rem;
 }
 
-.pf-v5-theme-dark .sensors-report-form-wrapper {
+.pf-v5-theme-dark .termograf-form-wrapper {
   background: none; /* Remove gradient in dark mode */
 }
 
-.sensors-report-form-header {
-  margin-bottom: 2rem;
+.termograf-form-header {
+  margin-bottom: 1.75rem;
   text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--tg-border-color);
 }
 
-.sensors-report-form-header img.sensors-report-icon {
+.termograf-form-header img.termograf-icon {
   display: block;
-  margin: 0 auto 1rem;
-  width: 60px;
+  margin: 0 auto 0.75rem;
+  width: 56px;
   height: auto;
-  filter: drop-shadow(0 4px 6px var(--sr-shadow-color));
+  filter: drop-shadow(0 4px 6px var(--tg-shadow-color));
 }
 
-.sensors-report-form-header h2 {
-  font-size: 1.75rem; /* Larger heading */
-  font-weight: 700; /* Bolder heading */
-  color: var(--sr-primary-color); /* Primary color for heading */
-  margin-bottom: 0.5rem;
+.termograf-form-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--tg-primary-color);
+  margin-bottom: 0.35rem;
 }
 
-.pf-v5-theme-dark .sensors-report-form-header h2 {
-  color: var(--sr-secondary-color); /* Different color for dark theme */
+.pf-v5-theme-dark .termograf-form-header h2 {
+  color: var(--tg-secondary-color);
 }
 
-.sensors-report-form-header p {
-  color: var(--sr-footer-text-color);
-  font-size: 0.95rem;
+.pf-v5-theme-dark .termograf-form-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.termograf-form-header p {
+  color: var(--tg-footer-text-color);
+  font-size: 0.9rem;
   margin: 0;
 }
 
+/* Form fields container */
+.termograf-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.termograf-form-fields .pf-v5-c-form__group {
+  margin-bottom: 0.5rem;
+}
+
+/* Remember Me + Forgot Password on the same row */
+.tg-form-options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.tg-remember-me {
+  flex-shrink: 0;
+}
+
+.tg-forgot-password {
+  flex-shrink: 0;
+}
+
+.tg-forgot-password .tg-forgot-password-link {
+  color: var(--tg-secondary-color);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.tg-forgot-password .tg-forgot-password-link:hover {
+  color: var(--tg-primary-color);
+  text-decoration: underline;
+}
+
+.tg-forgot-password .tg-forgot-password-link::before {
+  content: '\f084';
+  font-family: 'Font Awesome 5 Free', 'Font Awesome 6 Free';
+  margin-right: 0.4rem;
+  font-weight: 900;
+  font-size: 0.8rem;
+}
+
+/* Full-width submit button */
+.tg-submit-row {
+  margin-top: 1.25rem;
+}
+
+.tg-btn-submit {
+  width: 100%;
+  display: block;
+  padding: 0.85rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  letter-spacing: 0.02em;
+}
+
 /* Register container styling */
-.sensors-report-register-container {
+.termograf-register-container {
   margin-top: 1.5rem;
   text-align: center;
 }
 
-.sensors-report-register-prompt {
+.termograf-register-prompt {
   font-size: 0.95rem;
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
 }
 
-.sensors-report-register-link {
+.termograf-register-link {
   margin-left: 0.5rem;
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.sensors-report-register-link:hover {
-  color: var(--sr-secondary-color);
+.termograf-register-link:hover {
+  color: var(--tg-secondary-color);
   text-decoration: underline;
 }
 
@@ -470,7 +541,7 @@ body {
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: var(--sr-footer-text-color);
+  color: var(--tg-footer-text-color);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -484,7 +555,7 @@ body {
 }
 
 .password-toggle-btn:hover {
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
 }
 
 /* Position the toggle button correctly within the input container */
@@ -509,13 +580,13 @@ input[type="password"] {
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--sr-focus-ring); }
+  0% { box-shadow: 0 0 0 0 var(--tg-focus-ring); }
   70% { box-shadow: 0 0 0 5px rgba(10, 147, 150, 0); }
   100% { box-shadow: 0 0 0 0 rgba(10, 147, 150, 0); }
 }
 
 .input-has-value label {
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
 }
 
 /* Checkbox styling */
@@ -527,7 +598,7 @@ input[type="password"] {
   display: flex;
   align-items: center;
   font-size: 0.875rem;
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
 }
 
 .checkbox input[type="checkbox"] {
@@ -543,14 +614,14 @@ input[type="password"] {
   align-items: center;
 }
 
-/* Forgot Password Link Styling */
-.sr-forgot-password-wrapper {
-  margin-top: 1rem;
+/* Forgot Password Link Styling — legacy (used by reset-password page) */
+.tg-forgot-password-wrapper {
+  margin-top: 0.75rem;
   text-align: center;
 }
 
-.sr-forgot-password-link {
-  color: var(--sr-secondary-color);
+.tg-forgot-password-link {
+  color: var(--tg-secondary-color);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -559,12 +630,12 @@ input[type="password"] {
   padding: 0.3rem 0;
 }
 
-.sr-forgot-password-link:hover {
-  color: var(--sr-primary-color);
+.tg-forgot-password-link:hover {
+  color: var(--tg-primary-color);
   text-decoration: underline;
 }
 
-.sr-forgot-password-link:before {
+.tg-forgot-password-link:before {
   content: '\f084';
   font-family: 'Font Awesome 5 Free';
   margin-right: 0.5rem;
@@ -572,19 +643,19 @@ input[type="password"] {
 }
 
 /* Forgot Password Button Styling */
-.sr-forgot-password-button-container {
+.tg-forgot-password-button-container {
   text-align: center;
   margin-top: 1rem;
 }
 
-.sr-forgot-password-button {
+.tg-forgot-password-button {
   display: inline-block;
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--sr-border-color);
+  border: 1px solid var(--tg-border-color);
   border-radius: 6px;
   background-color: transparent;
   transition: all 0.2s ease;
@@ -592,13 +663,13 @@ input[type="password"] {
   text-align: center;
 }
 
-.sr-forgot-password-button:hover {
-  background-color: var(--sr-hover-bg);
-  border-color: var(--sr-secondary-color);
-  color: var(--sr-primary-color);
+.tg-forgot-password-button:hover {
+  background-color: var(--tg-hover-bg);
+  border-color: var(--tg-secondary-color);
+  color: var(--tg-primary-color);
 }
 
-.sr-forgot-password-button:before {
+.tg-forgot-password-button:before {
   content: '\f084';
   font-family: 'Font Awesome 5 Free';
   margin-right: 0.5rem;
@@ -615,7 +686,7 @@ input[type="password"] {
 }
 
 .pf-v5-c-button.pf-m-primary {
-  background: linear-gradient(to bottom right, var(--sr-primary-color), var(--sr-secondary-color));
+  background: linear-gradient(to bottom right, var(--tg-primary-color), var(--tg-secondary-color));
   border: none;
   color: white;
   font-weight: 600;
@@ -625,12 +696,12 @@ input[type="password"] {
 
 .pf-v5-c-button.pf-m-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px var(--sr-shadow-color);
+  box-shadow: 0 6px 12px var(--tg-shadow-color);
   filter: brightness(110%);
 }
 
 .pf-v5-theme-dark .pf-v5-c-button.pf-m-primary {
-  background: linear-gradient(to bottom right, var(--sr-primary-color), var(--sr-secondary-color));
+  background: linear-gradient(to bottom right, var(--tg-primary-color), var(--tg-secondary-color));
   box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
 }
 
@@ -640,18 +711,18 @@ input[type="password"] {
 
 .pf-v5-c-button.pf-m-secondary {
   background-color: transparent;
-  border-color: var(--sr-secondary-color);
-  color: var(--sr-secondary-color);
+  border-color: var(--tg-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
 .pf-v5-c-button.pf-m-secondary:hover {
-  background-color: var(--sr-hover-bg);
+  background-color: var(--tg-hover-bg);
   transform: translateY(-1px);
-  box-shadow: 0 2px 5px var(--sr-shadow-color);
+  box-shadow: 0 2px 5px var(--tg-shadow-color);
 }
 
 .pf-v5-c-button.pf-m-link {
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
 .pf-v5-c-button.pf-m-block {
@@ -665,39 +736,39 @@ input[type="password"] {
 }
 
 #kc-form-buttons {
-  margin-top: 2rem;
+  margin-top: 1.25rem;
 }
 
 #kc-form-options {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 /* "Forgot password" link styling */
 #kc-form-options + div a {
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s ease;
 }
 
 #kc-form-options + div a:hover {
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
   text-decoration: underline;
 }
 
 /* Custom Footer styling */
-.sensors-report-footer {
+.termograf-footer {
   margin-top: 1.5rem;
   padding-top: 1rem;
   text-align: center;
 }
 
-.sensors-report-footer-content {
+.termograf-footer-content {
   max-width: 100%;
   margin: 0 auto;
 }
 
-.sensors-report-footer-links {
+.termograf-footer-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -705,27 +776,27 @@ input[type="password"] {
   margin-bottom: 0.75rem;
 }
 
-.sensors-report-footer-link {
-  color: var(--sr-footer-link-color);
+.termograf-footer-link {
+  color: var(--tg-footer-link-color);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s ease;
 }
 
-.sensors-report-footer-link:hover {
-  color: var(--sr-accent-color);
+.termograf-footer-link:hover {
+  color: var(--tg-accent-color);
   text-decoration: underline;
 }
 
-.sensors-report-footer-copyright {
-  color: var(--sr-footer-text-color);
+.termograf-footer-copyright {
+  color: var(--tg-footer-text-color);
   font-size: 0.75rem;
 }
 
 /* Footer styling */
 .pf-v5-c-login__main-footer {
   padding: 1.5rem 2rem;
-  border-top: 1px solid var(--sr-border-color);
+  border-top: 1px solid var(--tg-border-color);
 }
 
 .pf-v5-c-login__main-footer-band {
@@ -738,19 +809,19 @@ input[type="password"] {
   margin-bottom: 1.5rem;
 }
 
-/* Language selector styling */
+/* Language selector styling — override for proper flag alignment */
 #login-select-toggle {
   border-radius: 6px;
-  background-color: var(--sr-card-background);
-  color: var(--sr-text-color);
-  border-color: var(--sr-border-color);
-  padding-left: 40px !important; /* Make room for flag icon */
+  background-color: var(--tg-card-background);
+  color: var(--tg-text-color);
+  border-color: var(--tg-border-color);
+  padding-left: 36px !important;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-position: 10px center !important;
+  background-position: 8px center !important;
   background-repeat: no-repeat !important;
-  background-size: 20px auto !important;
+  background-size: 18px auto !important;
   position: relative;
   z-index: 1;
 }
@@ -840,7 +911,7 @@ option.flag-option[data-flag="fr"] {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--sr-text-color);
+  border-top: 5px solid var(--tg-text-color);
   pointer-events: none;
 }
 
@@ -956,14 +1027,14 @@ option.flag-option[data-flag="fr"] {
 
 /* "Back to login" link on registration */
 #kc-form-options a {
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s ease;
 }
 
 #kc-form-options a:hover {
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
   text-decoration: underline;
 }
 
@@ -983,55 +1054,80 @@ option.flag-option[data-flag="fr"] {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .pf-v5-c-login__container {
-    padding: 1rem;
+  .pf-v5-c-login {
+    padding: 1rem 0.5rem;
   }
-  
+
   .pf-v5-c-login__main-header,
   .pf-v5-c-login__main-body,
   .pf-v5-c-login__main-footer {
     padding: 1.25rem;
   }
   
-  .sensors-report-footer-links {
+  .termograf-footer-links {
     flex-direction: column;
     gap: 0.75rem;
   }
+
+  /* Compact card header on mobile */
+  .tg-card-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .tg-card-header-logo .termograf-logo {
+    height: 26px;
+  }
+
+  #login-select-toggle {
+    min-width: 110px;
+    font-size: 0.75rem;
+  }
+
+  /* Stack remember-me and forgot-password on small screens */
+  .tg-form-options-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tg-forgot-password {
+    align-self: center;
+  }
 }
 
-/* Theme toggle button */
-.sr-theme-toggle {
+/* Theme toggle button — extended styles */
+.tg-theme-toggle {
   position: relative;
-  background-color: var(--sr-card-background);
-  border: 1px solid var(--sr-border-color);
+  background-color: var(--tg-card-background);
+  border: 1px solid var(--tg-border-color);
   border-radius: 50%;
-  color: var(--sr-primary-color);
-  width: 40px;
-  height: 40px;
+  color: var(--tg-primary-color);
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.2s ease;
-  backdrop-filter: blur(8px);
+  font-size: 0.85rem;
 }
 
-.sr-theme-toggle:hover {
+.tg-theme-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--sr-shadow-color);
-  border-color: var(--sr-secondary-color);
-  color: var(--sr-secondary-color);
+  box-shadow: 0 4px 8px var(--tg-shadow-color);
+  border-color: var(--tg-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
-.pf-v5-theme-dark .sr-theme-toggle {
+.pf-v5-theme-dark .tg-theme-toggle {
   background-color: rgba(0, 180, 216, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
-.pf-v5-theme-dark .sr-theme-toggle:hover {
+.pf-v5-theme-dark .tg-theme-toggle:hover {
   background-color: rgba(0, 180, 216, 0.2);
-  border-color: var(--sr-secondary-color);
+  border-color: var(--tg-secondary-color);
   box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
 }
 
@@ -1040,18 +1136,18 @@ option.flag-option[data-flag="fr"] {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
 }
 
 .legal-content h2 {
   font-size: 1.75rem;
   font-weight: 700;
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
   margin-bottom: 1rem;
 }
 
 .legal-content .effective-date {
-  color: var(--sr-footer-text-color);
+  color: var(--tg-footer-text-color);
   font-size: 0.9rem;
   margin-bottom: 2rem;
 }
@@ -1063,7 +1159,7 @@ option.flag-option[data-flag="fr"] {
 .legal-content h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
   margin-bottom: 1rem;
 }
 
@@ -1094,10 +1190,10 @@ option.flag-option[data-flag="fr"] {
   display: flex;
   align-items: center;
   padding: 8px 12px 8px 40px;
-  border: 1px solid var(--sr-border-color);
+  border: 1px solid var(--tg-border-color);
   border-radius: 6px;
-  background-color: var(--sr-card-background);
-  color: var(--sr-text-color);
+  background-color: var(--tg-card-background);
+  color: var(--tg-text-color);
   font-size: 0.875rem;
   background-position: 10px center !important;
   background-repeat: no-repeat !important;
@@ -1115,7 +1211,7 @@ option.flag-option[data-flag="fr"] {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid var(--sr-text-color);
+  border-top: 5px solid var(--tg-text-color);
 }
 
 .language-dropdown-options {
@@ -1123,8 +1219,8 @@ option.flag-option[data-flag="fr"] {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: var(--sr-card-background);
-  border: 1px solid var(--sr-border-color);
+  background-color: var(--tg-card-background);
+  border: 1px solid var(--tg-border-color);
   border-radius: 6px;
   margin-top: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -1141,7 +1237,7 @@ option.flag-option[data-flag="fr"] {
   display: block;
   padding: 8px 12px 8px 40px;
   text-decoration: none;
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
   background-position: 10px center !important;
   background-repeat: no-repeat !important;
   background-size: 20px auto !important;
@@ -1149,7 +1245,7 @@ option.flag-option[data-flag="fr"] {
 }
 
 .language-option:hover {
-  background-color: var(--sr-hover-bg);
+  background-color: var(--tg-hover-bg);
   text-decoration: none;
 }
 

@@ -1,45 +1,45 @@
-/* SensorsReport Account Theme Styles */
+/* Termograf Account Theme Styles */
 
 :root {
-  --sr-primary-color: #0870a3;
-  --sr-secondary-color: #1e90ff;
-  --sr-accent-color: #ff8400;
-  --sr-text-color: #112233;
-  --sr-background-color: #f8faff;
-  --sr-card-background: #ffffff;
-  --sr-border-color: #d0e0ef;
-  --sr-footer-text-color: #5a6b7b;
-  --sr-footer-link-color: #0870a3;
-  --sr-input-focus-color: rgba(30, 144, 255, 0.25);
-  --sr-error-color: #e63946;
-  --sr-success-color: #2a9d8f;
-  --sr-shadow-color: rgba(8, 112, 163, 0.15);
-  --sr-hover-bg: rgba(30, 144, 255, 0.08);
+  --tg-primary-color: #0870a3;
+  --tg-secondary-color: #1e90ff;
+  --tg-accent-color: #ff8400;
+  --tg-text-color: #112233;
+  --tg-background-color: #f8faff;
+  --tg-card-background: #ffffff;
+  --tg-border-color: #d0e0ef;
+  --tg-footer-text-color: #5a6b7b;
+  --tg-footer-link-color: #0870a3;
+  --tg-input-focus-color: rgba(30, 144, 255, 0.25);
+  --tg-error-color: #e63946;
+  --tg-success-color: #2a9d8f;
+  --tg-shadow-color: rgba(8, 112, 163, 0.15);
+  --tg-hover-bg: rgba(30, 144, 255, 0.08);
 }
 
 .pf-v5-theme-dark {
-  --sr-primary-color: #00b4d8;
-  --sr-secondary-color: #48cae4;
-  --sr-accent-color: #ffd60a;
-  --sr-text-color: #ffffff;
-  --sr-background-color: var(--sensorsreport-dark-bg-color);
-  --sr-card-background: var(--sensorsreport-dark-card-bg);
-  --sr-border-color: var(--sensorsreport-dark-border-color);
-  --sr-footer-text-color: #adb5bd;
-  --sr-footer-link-color: #48cae4;
-  --sr-input-focus-color: rgba(0, 180, 216, 0.4);
-  --sr-error-color: #ff6b6b;
-  --sr-success-color: #40c057;
-  --sr-shadow-color: rgba(0, 180, 216, 0.2);
-  --sr-hover-bg: rgba(0, 180, 216, 0.15);
+  --tg-primary-color: #00b4d8;
+  --tg-secondary-color: #48cae4;
+  --tg-accent-color: #ffd60a;
+  --tg-text-color: #ffffff;
+  --tg-background-color: var(--termograf-dark-bg-color);
+  --tg-card-background: var(--termograf-dark-card-bg);
+  --tg-border-color: var(--termograf-dark-border-color);
+  --tg-footer-text-color: #adb5bd;
+  --tg-footer-link-color: #48cae4;
+  --tg-input-focus-color: rgba(0, 180, 216, 0.4);
+  --tg-error-color: #ff6b6b;
+  --tg-success-color: #40c057;
+  --tg-shadow-color: rgba(0, 180, 216, 0.2);
+  --tg-hover-bg: rgba(0, 180, 216, 0.15);
 }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--sr-background-color);
-  color: var(--sr-text-color);
+  background-color: var(--tg-background-color);
+  color: var(--tg-text-color);
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -53,122 +53,122 @@ body {
 }
 
 /* Account Header */
-.sr-account-header {
+.tg-account-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.sr-logo-container {
+.tg-logo-container {
   margin-bottom: 1.5rem;
 }
 
-.sr-logo {
+.tg-logo {
   max-width: 220px;
   height: auto;
 }
 
-.sr-account-header h1 {
+.tg-account-header h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
   margin: 0;
 }
 
 /* Account Content */
-.sr-account-content {
+.tg-account-content {
   flex: 1;
 }
 
 /* Account Card */
-.sr-account-card {
-  background-color: var(--sr-card-background);
+.tg-account-card {
+  background-color: var(--tg-card-background);
   border-radius: 12px;
-  box-shadow: 0 10px 30px var(--sr-shadow-color);
-  border: 1px solid var(--sr-border-color);
+  box-shadow: 0 10px 30px var(--tg-shadow-color);
+  border: 1px solid var(--tg-border-color);
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
   backdrop-filter: blur(10px);
 }
 
-.pf-v5-theme-dark .sr-account-card {
+.pf-v5-theme-dark .tg-account-card {
   background-color: rgba(30, 30, 30, 0.95);
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-.sr-account-welcome {
+.tg-account-welcome {
   text-align: center;
   margin-bottom: 2.5rem;
 }
 
-.sr-account-welcome h2 {
+.tg-account-welcome h2 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--sr-text-color);
+  color: var(--tg-text-color);
   margin-bottom: 0.75rem;
 }
 
-.sr-account-welcome p {
+.tg-account-welcome p {
   font-size: 1rem;
-  color: var(--sr-footer-text-color);
+  color: var(--tg-footer-text-color);
   max-width: 600px;
   margin: 0 auto;
 }
 
 /* Account Sections */
-.sr-account-sections {
+.tg-account-sections {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 }
 
 @media (min-width: 768px) {
-  .sr-account-sections {
+  .tg-account-sections {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.sr-account-section {
-  background-color: var(--sr-card-background);
-  border: 1px solid var(--sr-border-color);
+.tg-account-section {
+  background-color: var(--tg-card-background);
+  border: 1px solid var(--tg-border-color);
   border-radius: 8px;
   padding: 1.5rem;
   transition: all 0.2s ease;
 }
 
-.sr-account-section:hover {
+.tg-account-section:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px var(--sr-shadow-color);
-  border-color: var(--sr-secondary-color);
+  box-shadow: 0 8px 16px var(--tg-shadow-color);
+  border-color: var(--tg-secondary-color);
 }
 
-.pf-v5-theme-dark .sr-account-section {
+.pf-v5-theme-dark .tg-account-section {
   background-color: rgba(46, 46, 46, 0.95);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-.pf-v5-theme-dark .sr-account-section:hover {
+.pf-v5-theme-dark .tg-account-section:hover {
   box-shadow: 0 8px 16px rgba(0, 180, 216, 0.3);
-  border-color: var(--sr-secondary-color);
+  border-color: var(--tg-secondary-color);
 }
 
-.sr-account-section h3 {
+.tg-account-section h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
   margin-top: 0;
   margin-bottom: 1rem;
 }
 
-.sr-account-actions {
+.tg-account-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
 }
 
 /* Button Styles */
-.sr-btn {
+.tg-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -182,63 +182,63 @@ body {
   transition: all 0.2s ease;
 }
 
-.sr-btn-primary {
-  background: linear-gradient(to bottom right, var(--sr-primary-color), var(--sr-secondary-color));
+.tg-btn-primary {
+  background: linear-gradient(to bottom right, var(--tg-primary-color), var(--tg-secondary-color));
   color: white;
   border: none;
 }
 
-.sr-btn-primary:hover {
+.tg-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px var(--sr-shadow-color);
+  box-shadow: 0 6px 12px var(--tg-shadow-color);
   filter: brightness(110%);
 }
 
-.pf-v5-theme-dark .sr-btn-primary {
+.pf-v5-theme-dark .tg-btn-primary {
   box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
 }
 
-.pf-v5-theme-dark .sr-btn-primary:hover {
+.pf-v5-theme-dark .tg-btn-primary:hover {
   box-shadow: 0 8px 16px rgba(0, 180, 216, 0.4);
 }
 
-.sr-btn-secondary {
+.tg-btn-secondary {
   background-color: transparent;
-  border-color: var(--sr-secondary-color);
-  color: var(--sr-secondary-color);
+  border-color: var(--tg-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
-.sr-btn-secondary:hover {
-  background-color: var(--sr-hover-bg);
+.tg-btn-secondary:hover {
+  background-color: var(--tg-hover-bg);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px var(--sr-shadow-color);
+  box-shadow: 0 4px 8px var(--tg-shadow-color);
 }
 
-.sr-btn-accent {
-  background-color: var(--sr-accent-color);
+.tg-btn-accent {
+  background-color: var(--tg-accent-color);
   color: white;
 }
 
-.sr-btn-accent:hover {
+.tg-btn-accent:hover {
   opacity: 0.9;
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styles */
-.sr-account-footer {
+.tg-account-footer {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--sr-border-color);
+  border-top: 1px solid var(--tg-border-color);
 }
 
-.sr-footer-content {
+.tg-footer-content {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-.sr-footer-links {
+.tg-footer-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -246,20 +246,20 @@ body {
   margin-bottom: 1rem;
 }
 
-.sr-footer-link {
-  color: var(--sr-footer-link-color);
+.tg-footer-link {
+  color: var(--tg-footer-link-color);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s ease;
 }
 
-.sr-footer-link:hover {
-  color: var(--sr-accent-color);
+.tg-footer-link:hover {
+  color: var(--tg-accent-color);
   text-decoration: underline;
 }
 
-.sr-footer-copyright {
-  color: var(--sr-footer-text-color);
+.tg-footer-copyright {
+  color: var(--tg-footer-text-color);
   font-size: 0.75rem;
 }
 
@@ -269,19 +269,19 @@ body {
     padding: 1rem;
   }
   
-  .sr-account-card {
+  .tg-account-card {
     padding: 1.5rem;
   }
   
-  .sr-account-section {
+  .tg-account-section {
     padding: 1.25rem;
   }
   
-  .sr-account-sections {
+  .tg-account-sections {
     gap: 1rem;
   }
   
-  .sr-footer-links {
+  .tg-footer-links {
     flex-direction: column;
     gap: 0.75rem;
   }
@@ -297,13 +297,13 @@ body {
 .input-focused input,
 .input-focused select,
 .input-focused textarea {
-  border-color: var(--sr-secondary-color) !important;
-  box-shadow: 0 0 0 3px var(--sr-input-focus-color) !important;
+  border-color: var(--tg-secondary-color) !important;
+  box-shadow: 0 0 0 3px var(--tg-input-focus-color) !important;
   transition: all 0.2s ease;
 }
 
 .input-has-value label {
-  color: var(--sr-primary-color);
+  color: var(--tg-primary-color);
   font-weight: 500;
 }
 
@@ -315,7 +315,7 @@ body {
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: var(--sr-footer-text-color);
+  color: var(--tg-footer-text-color);
   cursor: pointer;
   padding: 5px;
   display: flex;
@@ -325,7 +325,7 @@ body {
 }
 
 .password-toggle-btn:hover {
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
 /* Ripple Effect for Interactive Elements */
@@ -353,16 +353,16 @@ body {
 }
 
 /* Theme Toggle Button */
-.sr-theme-toggle {
+.tg-theme-toggle {
   position: absolute;
   top: 1rem;
   right: 1rem;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--sr-card-background);
-  color: var(--sr-primary-color);
-  border: 1px solid var(--sr-border-color);
+  background-color: var(--tg-card-background);
+  color: var(--tg-primary-color);
+  border: 1px solid var(--tg-border-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -372,31 +372,31 @@ body {
   backdrop-filter: blur(8px);
 }
 
-.sr-theme-toggle:hover {
+.tg-theme-toggle:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px var(--sr-shadow-color);
-  border-color: var(--sr-secondary-color);
-  color: var(--sr-secondary-color);
+  box-shadow: 0 4px 8px var(--tg-shadow-color);
+  border-color: var(--tg-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
-.pf-v5-theme-dark .sr-theme-toggle {
+.pf-v5-theme-dark .tg-theme-toggle {
   background-color: rgba(0, 180, 216, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
-  color: var(--sr-secondary-color);
+  color: var(--tg-secondary-color);
 }
 
-.pf-v5-theme-dark .sr-theme-toggle:hover {
+.pf-v5-theme-dark .tg-theme-toggle:hover {
   background-color: rgba(0, 180, 216, 0.2);
-  border-color: var(--sr-secondary-color);
+  border-color: var(--tg-secondary-color);
   box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
 }
 
 /* Loading Indicator */
-.sr-loading {
+.tg-loading {
   position: relative;
 }
 
-.sr-loading::after {
+.tg-loading::after {
   content: '';
   position: absolute;
   top: 0;
@@ -410,7 +410,7 @@ body {
   z-index: 9;
 }
 
-.pf-v5-theme-dark .sr-loading::after {
+.pf-v5-theme-dark .tg-loading::after {
   background-color: rgba(30, 30, 30, 0.7);
 }
 
@@ -418,12 +418,12 @@ body {
 input, 
 select, 
 textarea,
-.sr-theme-toggle {
+.tg-theme-toggle {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Notification styles */
-.sr-notification {
+.tg-notification {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -439,26 +439,26 @@ textarea,
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.sr-notification.show {
+.tg-notification.show {
   transform: translateY(0);
   opacity: 1;
 }
 
-.sr-notification-success {
-  background-color: var(--sr-success-color);
+.tg-notification-success {
+  background-color: var(--tg-success-color);
 }
 
-.sr-notification-error {
-  background-color: var(--sr-error-color);
+.tg-notification-error {
+  background-color: var(--tg-error-color);
 }
 
-.sr-notification-info {
-  background-color: var(--sr-secondary-color);
+.tg-notification-info {
+  background-color: var(--tg-secondary-color);
 }
 
 /* Focus accessibility improvements */
 :focus {
-  outline: 2px solid var(--sr-secondary-color);
+  outline: 2px solid var(--tg-secondary-color);
   outline-offset: 2px;
 }
 
@@ -467,18 +467,18 @@ textarea,
 }
 
 :focus-visible {
-  outline: 2px solid var(--sr-secondary-color);
+  outline: 2px solid var(--tg-secondary-color);
   outline-offset: 2px;
 }
 
 /* Transitions for theme switching */
-.sr-account-container,
-.sr-account-card,
-.sr-account-section,
-.sr-btn,
+.tg-account-container,
+.tg-account-card,
+.tg-account-section,
+.tg-btn,
 input,
 select,
 textarea,
-.sr-theme-toggle {
+.tg-theme-toggle {
   transition: all 0.3s ease;
 }

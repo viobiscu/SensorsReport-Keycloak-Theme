@@ -1,4 +1,4 @@
-<#import "template.ftl" as layout>
+﻿<#import "template.ftl" as layout>
 <#import "buttons.ftl" as buttons>
 <#import "field.ftl" as field>
 
@@ -7,8 +7,8 @@
         ${msg("registerTitle")}
     <#elseif section = "form">
         <div id="kc-form">
-            <div id="kc-form-wrapper" class="sensors-report-form-wrapper">
-                <div class="sensors-report-form-header">
+            <div id="kc-form-wrapper" class="termograf-form-wrapper">
+                <div class="termograf-form-header">
                     <h2>Create Your Account</h2>
                     <p>Fill in your information to get started</p>
                 </div>

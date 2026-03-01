@@ -1,7 +1,7 @@
-# Keycloak Theme Portability Guide
+﻿# Keycloak Theme Portability Guide
 
 ## Problem
-When moving the SensorsReport theme between different Keycloak instances, hardcoded resource URLs with cache-busting identifiers (like `/resources/3pw76/`) would break because each Keycloak instance generates its own unique identifier.
+When moving the Termograf theme between different Keycloak instances, hardcoded resource URLs with cache-busting identifiers (like `/resources/3pw76/`) would break because each Keycloak instance generates its own unique identifier.
 
 ## Solution
 We've implemented dynamic resource path resolution that automatically adapts to any Keycloak instance.
@@ -38,7 +38,7 @@ The `theme.js` file now uses dynamic paths instead of hardcoded ones:
 **Before:**
 ```javascript
 const backgrounds = [
-  '/resources/3pw76/login/SensorsReport/img/pharmaceutical-warehouse.jpg',
+  '/resources/3pw76/login/Termograf/img/termograf-product-01.jpg',
   // ... more hardcoded paths
 ];
 ```
@@ -48,8 +48,8 @@ const backgrounds = [
 function getBackgroundPaths() {
   const basePath = window.KEYCLOAK_RESOURCE_PATH || '/resources';
   const images = [
-    'pharmaceutical-warehouse.jpg',
-    'pharmaceutical-warehouse-02.jpg',
+    'termograf-product-01.jpg',
+    'termograf-product-02.jpg',
     // ... image names only
   ];
   
@@ -79,7 +79,7 @@ function getBackgroundPaths() {
 
 When deploying this theme to a new Keycloak instance:
 
-1. Copy the entire `SensorsReport` theme folder to `themes/` directory
+1. Copy the entire `Termograf` theme folder to `themes/` directory
 2. Restart Keycloak or run `kc.sh build`
 3. No additional configuration needed - the theme will automatically adapt to the new instance
 

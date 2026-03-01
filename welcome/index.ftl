@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -50,13 +50,13 @@
           <main class="pf-v5-c-login__main">
             <header class="pf-v5-c-login__main-header">
               <#if localUser>
-                <h1 class="pf-v5-c-title pf-m-2xl sensorsreport-welcome-title">Create a temporary administrative user</h1>
+                <h1 class="pf-v5-c-title pf-m-2xl termograf-welcome-title">Create a temporary administrative user</h1>
                 <#if !successMessage?has_content>
-                  <p class="pf-v5-c-login__main-header-desc sensorsreport-welcome-text">To get started with ${productName}, you first create a temporary administrative user. Later, to harden security, create a new permanent administrative user and delete the temporary user that was created during this setup.</p>
+                  <p class="pf-v5-c-login__main-header-desc termograf-welcome-text">To get started with ${productName}, you first create a temporary administrative user. Later, to harden security, create a new permanent administrative user and delete the temporary user that was created during this setup.</p>
                 </#if>
               <#else>
-                <h1 class="pf-v5-c-title pf-m-3xl sensorsreport-welcome-title">Local access required</h1>
-                <p class="pf-v5-c-login__main-header-desc sensorsreport-welcome-text">You will need local access to create the temporary administrative user.</p>
+                <h1 class="pf-v5-c-title pf-m-3xl termograf-welcome-title">Local access required</h1>
+                <p class="pf-v5-c-login__main-header-desc termograf-welcome-text">You will need local access to create the temporary administrative user.</p>
               </#if>
             </header>
             <div class="pf-v5-c-login__main-body">

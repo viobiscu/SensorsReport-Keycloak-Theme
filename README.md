@@ -1,6 +1,6 @@
-# SensorsReport Keycloak Theme
+﻿# Termograf Keycloak Theme
 
-A custom Keycloak theme for SensorsReport application with responsive design, dark mode support, and multi-language capability.
+A custom Keycloak theme for Termograf application with responsive design, dark mode support, and multi-language capability.
 
 ## Features
 
@@ -25,7 +25,7 @@ A custom Keycloak theme for SensorsReport application with responsive design, da
 
 1. Copy this directory to the Keycloak themes folder
 2. In the Keycloak admin console, go to Realm Settings > Themes
-3. Select "sensorsreport" from the dropdown menus for Login, Account, Admin Console, and Email themes
+3. Select "termograf" from the dropdown menus for Login, Account, Admin Console, and Email themes
 
 ## Development
 
