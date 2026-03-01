@@ -1,5 +1,4 @@
-﻿<#ftl output_format="HTML">
-<#macro emailLayout>
+﻿<#macro emailLayout>
 <!DOCTYPE html>
 <html>
 <head>
