@@ -87,13 +87,13 @@
 }
 
 .pf-v5-theme-dark .tg-theme-toggle {
-  background-color: rgba(0, 180, 216, 0.1);
+  background-color: rgba(74, 222, 128, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
   color: var(--tg-secondary-color);
 }
 
 .pf-v5-theme-dark .tg-theme-toggle:hover {
-  background-color: rgba(0, 180, 216, 0.2);
+  background-color: rgba(74, 222, 128, 0.2);
   border-color: var(--tg-secondary-color);
-  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
 }

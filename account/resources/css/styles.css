@@ -1,37 +1,37 @@
 /* Termograf Account Theme Styles */
 
 :root {
-  --tg-primary-color: #0870a3;
-  --tg-secondary-color: #1e90ff;
+  --tg-primary-color: #0D7C4A;
+  --tg-secondary-color: #34D399;
   --tg-accent-color: #ff8400;
   --tg-text-color: #112233;
-  --tg-background-color: #f8faff;
+  --tg-background-color: #f8faf9;
   --tg-card-background: #ffffff;
-  --tg-border-color: #d0e0ef;
+  --tg-border-color: #d0efe0;
   --tg-footer-text-color: #5a6b7b;
-  --tg-footer-link-color: #0870a3;
-  --tg-input-focus-color: rgba(30, 144, 255, 0.25);
+  --tg-footer-link-color: #0D7C4A;
+  --tg-input-focus-color: rgba(13, 124, 74, 0.25);
   --tg-error-color: #e63946;
   --tg-success-color: #2a9d8f;
-  --tg-shadow-color: rgba(8, 112, 163, 0.15);
-  --tg-hover-bg: rgba(30, 144, 255, 0.08);
+  --tg-shadow-color: rgba(13, 124, 74, 0.15);
+  --tg-hover-bg: rgba(13, 124, 74, 0.08);
 }
 
 .pf-v5-theme-dark {
-  --tg-primary-color: #00b4d8;
-  --tg-secondary-color: #48cae4;
+  --tg-primary-color: #4ADE80;
+  --tg-secondary-color: #86EFAC;
   --tg-accent-color: #ffd60a;
   --tg-text-color: #ffffff;
   --tg-background-color: var(--termograf-dark-bg-color);
   --tg-card-background: var(--termograf-dark-card-bg);
   --tg-border-color: var(--termograf-dark-border-color);
   --tg-footer-text-color: #adb5bd;
-  --tg-footer-link-color: #48cae4;
-  --tg-input-focus-color: rgba(0, 180, 216, 0.4);
+  --tg-footer-link-color: #86EFAC;
+  --tg-input-focus-color: rgba(74, 222, 128, 0.4);
   --tg-error-color: #ff6b6b;
   --tg-success-color: #40c057;
-  --tg-shadow-color: rgba(0, 180, 216, 0.2);
-  --tg-hover-bg: rgba(0, 180, 216, 0.15);
+  --tg-shadow-color: rgba(74, 222, 128, 0.2);
+  --tg-hover-bg: rgba(74, 222, 128, 0.15);
 }
 
 body {
@@ -149,7 +149,7 @@ body {
 }
 
 .pf-v5-theme-dark .tg-account-section:hover {
-  box-shadow: 0 8px 16px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 8px 16px rgba(74, 222, 128, 0.3);
   border-color: var(--tg-secondary-color);
 }
 
@@ -195,11 +195,11 @@ body {
 }
 
 .pf-v5-theme-dark .tg-btn-primary {
-  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
 }
 
 .pf-v5-theme-dark .tg-btn-primary:hover {
-  box-shadow: 0 8px 16px rgba(0, 180, 216, 0.4);
+  box-shadow: 0 8px 16px rgba(74, 222, 128, 0.4);
 }
 
 .tg-btn-secondary {
@@ -380,15 +380,15 @@ body {
 }
 
 .pf-v5-theme-dark .tg-theme-toggle {
-  background-color: rgba(0, 180, 216, 0.1);
+  background-color: rgba(74, 222, 128, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
   color: var(--tg-secondary-color);
 }
 
 .pf-v5-theme-dark .tg-theme-toggle:hover {
-  background-color: rgba(0, 180, 216, 0.2);
+  background-color: rgba(74, 222, 128, 0.2);
   border-color: var(--tg-secondary-color);
-  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
 }
 
 /* Loading Indicator */

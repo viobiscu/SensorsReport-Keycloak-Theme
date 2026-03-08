@@ -1,28 +1,28 @@
 /* Termograf Admin Theme Styles */
 
 :root {
-    --tg-primary: #0870a3;
-    --tg-secondary: #1e90ff;
+    --tg-primary: #0D7C4A;
+    --tg-secondary: #34D399;
     --tg-accent: #ff8400;
     --tg-bg: #ffffff;
     --tg-bg-sidebar: #f8f9fa;
     --tg-text: #2c3e50;
     --tg-border: #e9ecef;
-    --tg-hover: rgba(30, 144, 255, 0.1);
+    --tg-hover: rgba(13, 124, 74, 0.1);
     --tg-shadow: rgba(0, 0, 0, 0.1);
     --tg-transition: all 0.3s ease;
 }
 
 /* Dark theme variables */
 .tg-theme-dark {
-    --tg-primary: #00b4d8;
-    --tg-secondary: #48cae4;
+    --tg-primary: #4ADE80;
+    --tg-secondary: #86EFAC;
     --tg-accent: #ffd60a;
     --tg-bg: #1a1a1a;
     --tg-bg-sidebar: #242424;
     --tg-text: #e9ecef;
     --tg-border: #2c2c2c;
-    --tg-hover: rgba(0, 180, 216, 0.2);
+    --tg-hover: rgba(74, 222, 128, 0.2);
     --tg-shadow: rgba(0, 0, 0, 0.3);
 }
 

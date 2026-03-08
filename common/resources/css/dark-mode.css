@@ -7,10 +7,10 @@
   --termograf-dark-text-color: #e9ecef;
   --termograf-dark-secondary-text: #adb5bd;
   --termograf-dark-border-color: #2c2c2c;
-  --termograf-dark-primary: #00b4d8;
-  --termograf-dark-secondary: #48cae4;
+  --termograf-dark-primary: #4ADE80;
+  --termograf-dark-secondary: #86EFAC;
   --termograf-dark-accent: #ffd60a;
-  --termograf-dark-hover-bg: rgba(0, 180, 216, 0.15);
+  --termograf-dark-hover-bg: rgba(74, 222, 128, 0.15);
   --termograf-dark-card-bg: #1e1e1e;
   --termograf-dark-input-bg: #242424;
   --termograf-dark-error: #e74c3c;
@@ -58,7 +58,7 @@
   .pf-v5-c-form-control:focus {
     background-color: var(--termograf-dark-elevated-surface);
     border-color: var(--termograf-dark-primary);
-    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.25);
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
   }
   
   /* Link colors */
